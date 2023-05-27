@@ -1,0 +1,39 @@
+@use '../utilities' as u;
+
+.toggle {
+   border: 0;
+   padding: 0;
+   z-index: 10;
+   gap: 0.3rem;
+   right: 1rem;
+   top: 1.2rem;
+   display: flex;
+   width: 1.5rem;
+   cursor: pointer;
+   justify-self: end;
+   margin: 0.3125rem;
+   position: absolute;
+   flex-direction: column;
+   justify-content: center;
+   background: transparent;
+   &:focus-visible {
+      outline: 0.125rem solid hsl(var(--clr-primary));
+      outline-offset: 0.3125rem;
+   }
+   .line {
+      width: 100%;
+      height: 0.15625rem;
+      transition: 250ms ease;
+      border-radius: 0.15rem;
+      background-color: hsl(var(--clr-primary));
+   }
+   .top[data-active='true'] {
+      transform: translateY(0.23rem) rotate(45deg);
+   }
+   .bottom[data-active='true'] {
+      transform: translateY(-0.2rem) rotate(-45deg);
+   }
+   @include u.breakpoint(screen-md) {
+      display: none;
+   }
+}

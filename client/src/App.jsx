@@ -1,7 +1,7 @@
-import './stylesheets/main.scss';
-import { createBrowserRouter, BrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
-import RootLayout from './pages/RootLayout';
+import RootLayout from './routes/Root';
+import './stylesheets/main.scss';
 import Error from './pages/Error';
 const router = createBrowserRouter([
 	{
@@ -13,7 +13,7 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-	return <BrowserRouter router={router} />;
+	return <RouterProvider router={router} />;
 }
 
 export default App;
