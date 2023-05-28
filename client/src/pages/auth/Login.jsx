@@ -3,6 +3,7 @@ import Input from '../../components/ui/Input';
 import UserContext from '../../context/UserContext';
 import { FcGoogle } from 'react-icons/fc';
 import { BsApple } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 
 function Login() {
    const [userDetails, setUserDetails] = useState({
@@ -20,6 +21,7 @@ function Login() {
       <div className='login'>
          <div className='login__header'>
             <h1>Login</h1>
+            <small>login to your account</small>
          </div>
          <form className='login__form'>
             <Input type='email' label='Email' id='email' />
@@ -42,6 +44,10 @@ function Login() {
                <BsApple />
                Apple
             </button>
+         </div>
+         <div className='login__link'>
+            <p>New user?</p>
+            <Link to='/register'>Create Account</Link>
          </div>
       </div>
    );

@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import UserProvider from './context/UserProvider';
 import LoginPage from './pages/auth/Login';
+import SignUpPage from './pages/auth/SignUp';
 import LandingPage from './pages/Landing';
 import RootLayout from './routes/Root';
 import Error from './pages/Error';
@@ -14,6 +15,7 @@ const router = createBrowserRouter([
       children: [
          { index: true, element: <LandingPage /> },
          { path: '/login', element: <LoginPage /> },
+         { path: '/register', element: <SignUpPage /> },
       ],
    },
 ]);

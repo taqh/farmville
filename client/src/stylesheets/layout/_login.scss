@@ -15,6 +15,11 @@
       flex-direction: column;
       gap: var(--spacing);
    }
+   &__link{
+      display: flex;
+      justify-content: center;
+      gap: 0.35rem;
+   }
 }
 .option {
    width: 100%;

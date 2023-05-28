@@ -138,4 +138,15 @@ a {
 }
 .login__alt {
    font-size: var(--fs-150);
+   color: hsl(var(--clr-dark-gray));
+}
+
+.login__link {
+   font-size: var(--fs-200);
+   font-weight: var(--fw-medium);
+   a {
+      font-weight: var(--fw-bold);
+      text-decoration: underline;
+      color: hsl(var(--clr-accent));
+   }
 }

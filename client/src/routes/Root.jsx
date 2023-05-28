@@ -3,7 +3,7 @@ import Navigation from '../components/Navigation';
 
 function RootLayout() {
    const location = useLocation();
-   const isLoggingIn = location.pathname.substring(1) === 'login';
+   const isLoggingIn = location.pathname.substring(1) === 'login' || 'register';
 
    return (
       <>
