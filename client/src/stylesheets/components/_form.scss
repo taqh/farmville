@@ -1,0 +1,70 @@
+@use '../utilities/' as u;
+
+.input {
+   position: relative;
+   margin-block: var(--spacing);
+
+   &__field {
+      width: 100%;
+      outline: transparent;
+      padding-block: 0.65rem;
+      border-radius: 0.3125em;
+      padding-inline: 0.75rem 2.5rem;
+      border: 0.15625em solid hsl(var(--clr-light-gray));
+      &::placeholder {
+         color: transparent;
+      }
+      &:focus {
+         border: hsl(var(--clr-accent)) 0.15625em solid;
+      }
+   }
+   &__label {
+      top: 0.85rem;
+      left: 0.6rem;
+      position: absolute;
+      padding: 1px 0.5rem;
+      transition: all 200ms ease;
+      transform: translateY(-110%);
+      background: hsl(var(--clr-white));
+   }
+}
+
+.input__field:placeholder-shown + .input__label {
+   left: 1rem;
+   top: 0.6;
+   padding: 0;
+   transform: translateY(0);
+   font-size: var(--fs-200);
+   color: hsl(var(--clr-dark-gray));
+}
+
+.login__form-btn {
+   width: 100%;
+   padding: 0.65rem;
+   border-radius: 0.3125em;
+   background: hsl(var(--clr-accent));
+   transition: color, background 300ms ease;
+   border: 0.15rem solid hsl(var(--clr-accent));
+   &:focus {
+      background: hsl(var(--clr-white));
+      border: 0.15rem solid hsl(var(--clr-accent));
+   }
+}
+.eye {
+   fill: hsl(var(--clr-dark-gray));
+   &:hover {
+      fill: hsl(var(--clr-accent));
+   }
+}
+.pass-btn {
+   right: 0;
+   top: 50%;
+   border: 0;
+   position: absolute;
+   max-width: fit-content;
+   transform: translate(-50%, -50%);
+   background-color: hsl(var(--clr-white));
+   &:focus {
+      outline: 0.15rem solid hsl(var(--clr-accent));
+   }
+}

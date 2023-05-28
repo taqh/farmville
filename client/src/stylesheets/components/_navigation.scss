@@ -1,19 +1,23 @@
 @use '../utilities' as u;
 
+header{
+   padding: var(--spacing);
+   @include u.breakpoint(screen-md) {
+      padding-inline: 0;
+   }
+}
 .header {
    display: flex;
-   padding: 0.625rem;
    align-items: center;
    gap: var(--gap, 1rem);
    transition: all 300ms ease;
    justify-content: space-between;
    background-color: hsl(var(--clr-white));
-   @include u.breakpoint(screen-sm) {
-      padding: 0.9375rem;
-   }
    @include u.breakpoint(screen-md) {
-      padding: 1.5rem 3rem;
+      margin-inline: auto;
+      max-width: calc(var(--max-width) + var(--spacing)*2);
    }
+
 	&__nav {
       padding: 0;
       display: flex;
@@ -123,7 +127,7 @@
    background-color: hsl(var(--clr-accent));
 }
 
-.login{
+.login-btn{
 	padding: 0.375em 1em;
 	border-radius: 0.3125rem;
 	background: hsl(var(--clr-accent));
@@ -131,8 +135,5 @@
 	border: 0.15rem solid hsl(var(--clr-accent));
 	&:hover{
 		background: hsl(var(--clr-white));
-	}
-	@include u.breakpoint-down(screen-md) {
-		margin: 0  2rem;
 	}
 }

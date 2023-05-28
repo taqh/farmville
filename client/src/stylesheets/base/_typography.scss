@@ -12,15 +12,18 @@
    --fs-350: 1.125rem;
    --fs-300: 1rem;
    --fs-200: 0.9375rem;
-   --fs-100: 0.875rem;
+   --fs-150: 0.875rem;
+   --fs-100: 0.75rem;
 
    /* font-families */
    --ff-primary: 'Manrope', sans-serif;
 
    // letter-spacing
    --ls-1: 4.75px;
-   --ls-2: 2.7px;
-   --ls-3: 2.35px;
+   --ls-2: 3.5px;
+   --ls-3: 2.7px;
+   --ls-4: 2.35px;
+   --ls-5: 2px;
 
    // font weight
    --fw-regular: 400;
@@ -52,7 +55,7 @@
 
 body {
    font-family: var(--ff-primary);
-   color: hsl(var(--clr-primary));
+   color: hsl(var(--clr-dark));
 }
 a {
    text-decoration: none;
@@ -69,9 +72,9 @@ a {
 }
 .link,
 .link--active {
-   color: hsl(var(--clr-primary));
+   color: hsl(var(--clr-dark));
 }
-.login {
+.login-btn {
    color: hsl(var(--clr-white));
    text-align: center;
    &:hover {
@@ -81,30 +84,58 @@ a {
 }
 
 .hero {
-	&__heading{
-		font-size: var(--fs-400);
-		@include u.breakpoint(screen-md) {
-			font-size: var(--fs-600);
-		}
+   &__heading {
+      font-size: var(--fs-400);
+      font-weight: var(--fw-extra-bold);
+      letter-spacing: var(--ls-2);
+      @include u.breakpoint(screen-md) {
+         font-size: var(--fs-600);
+      }
+   }
+   p {
+      font-weight: var(--fw-regular);
+      @include u.breakpoint(screen-md) {
+         font-size: var(--fs-350);
+      }
+   }
 
-		font-weight: var(--fw-extra-bold);
-		letter-spacing: var(--ls-1);
-	}
-	p {
-		font-weight: var(--fw-regular);
-		@include u.breakpoint(screen-md) {
-			font-size: var(--fs-350);
-		}
-	}
+   .action-btn {
+      font-weight: var(--fw-semi-bold);
+      letter-spacing: var(--ls-2);
+      @include u.breakpoint(screen-md) {
+         font-size: var(--fs-350);
+      }
+      &:first-of-type {
+         color: hsl(var(--clr-white));
+      }
+   }
+}
 
-	.action-btn {
-		font-weight: var(--fw-semi-bold);
-		letter-spacing: var(--ls-2);
-		@include u.breakpoint(screen-md) {
-			font-size: var(--fs-350);
-		}
-		&:first-of-type {
-			color: hsl(var(--clr-white));
-		}
-	}
+.input {
+   &__label {
+      font-size: var(--fs-100);
+      letter-spacing: var(--ls-5);
+      font-weight: var(--fw-semi-bold);
+      color: hsl(var(--clr-light-gray));
+   }
+   &__field:focus + .input__label {
+      color: hsl(var(--clr-accent));
+      font-weight: var(--fw-bold);
+   }
+   &__field:placeholder-shown + .input__label {
+      font-size: var(--fs-200);
+      letter-spacing: var(--ls-4);
+      font-weight: var(--fw-regular);
+      color: hsl(var(--clr-dark-gray));
+   }
+}
+.login__form-btn {
+   color: hsl(var(--clr-white));
+   font-weight: var(--fw-medium);
+   &:focus {
+      color: hsl(var(--clr-accent));
+   }
+}
+.login__alt {
+   font-size: var(--fs-150);
 }

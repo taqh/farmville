@@ -1,8 +1,9 @@
-header {
-   max-width: 93.75rem;
-   margin-inline: auto;
+#app{
+   display: grid;
 }
-main{
-   max-width: 100rem;
-   margin-inline: auto;
+button{
+   border: 0;
+   cursor: pointer;
+   outline: transparent;
+   background: transparent;
 }

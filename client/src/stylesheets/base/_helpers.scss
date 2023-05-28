@@ -1,6 +1,14 @@
 :root{
 	--gap: clamp(1.5rem, calc(1rem + 3vw), 3rem);
+	--max-width: 75.5rem;
+	--spacing: 1rem;
 }
+@media (min-width: 51.25em) {
+	:root{
+		--spacing: 1.5rem;
+	}
+}
+
 .sr-only {
 	position: absolute;
 	width: 1px;
@@ -18,10 +26,9 @@
 	padding: 0.5em 1em;
 	position: absolute;
 	margin-inline: auto;
-	color: hsl(var(--clr-dark));
 	transform: translateY(-100%);
-	background: hsl(var(--clr-white));
-	font-family: var(--ff-barlow-cond);
+	color: hsl(var(--clr-white));
+	background: hsl(var(--clr-accent));
 	transition: transform 250ms ease-in;
 }
 
@@ -30,7 +37,7 @@
 }
 
 .color-effect {
-   background: linear-gradient(120deg, var(--clr-primary-btn), var(--clr-accent));
+   background: linear-gradient(120deg, var(--clr-primary), var(--clr-accent));
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
 }
