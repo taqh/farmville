@@ -2,6 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
 
 :root {
+   /* font-families */
+   --ff-primary: 'Manrope', sans-serif;
+
    /* font-sizes */
    --fs-900: clamp(5rem, 2.2rem + 8vw, 9.375rem);
    --fs-800: 3.5rem;
@@ -14,9 +17,6 @@
    --fs-200: 0.9375rem;
    --fs-150: 0.875rem;
    --fs-100: 0.75rem;
-
-   /* font-families */
-   --ff-primary: 'Manrope', sans-serif;
 
    // letter-spacing
    --ls-1: 4.75px;
@@ -54,8 +54,13 @@
 // }
 
 body {
-   font-family: var(--ff-primary);
    color: hsl(var(--clr-dark));
+   font-family: var(--ff-primary);
+}
+h1,
+h2,
+h3 {
+   color: hsl(var(--clr-blue));
 }
 a {
    text-decoration: none;
@@ -63,7 +68,10 @@ a {
 .logo {
    font-size: var(--fs-400);
    font-weight: var(--fw-bold);
-   color: hsl(var(--clr-accent));
+   color: hsl(var(--clr-blue));
+   &--footer{
+      color: hsl(var(--clr-accent));
+   }
 }
 .header {
    &__nav {
@@ -74,13 +82,14 @@ a {
 .link--active {
    color: hsl(var(--clr-dark));
 }
-.login-btn {
+.login-btn,
+.learn-more {
    color: hsl(var(--clr-white));
    text-align: center;
    &:hover {
       color: hsl(var(--clr-accent));
    }
-   transition: color 300ms ease;
+   transition: color 250ms ease;
 }
 
 .hero__description {
@@ -114,30 +123,50 @@ a {
    }
 }
 
-.features{
+.features__header {
    text-align: center;
-}
-.features__header{
-   h2{
+   h2 {
       font-size: var(--fs-400);
    }
+   p {
+      max-width: 50ch;
+      @include u.breakpoint(screen-md) {
+         font-size: var(--fs-350);
+         line-height: 1.7;
+      }
+   }
 }
-.features__tab-btn{
-   font-size: var(--fs-300);
-   font-weight: var(--fw-medium);
-   transition: color 250ms ease;
-   &:hover{
-      color: hsl(var(--clr-accent));
+.feature__desc {
+   h3 {
+      font-size: var(--fs-400);
+   }
+   p {
+      max-width: 40ch;
+      font-size: var(--fs-300);
+      @include u.breakpoint(screen-md) {
+         font-size: var(--fs-350);
+      }
+   }
+   @include u.breakpoint-down(screen-md) {
+      text-align: center;
    }
 }
 
+.features__tab-btn {
+   font-size: var(--fs-300);
+   font-weight: var(--fw-medium);
+   transition: color 250ms ease;
+   &:hover {
+      color: hsl(var(--clr-accent));
+   }
+}
 
 .input {
    &__label {
       font-size: var(--fs-100);
       letter-spacing: var(--ls-5);
       font-weight: var(--fw-semi-bold);
-      color: hsl(var(--clr-light-gray));
+      color: hsl(var(--clr-gray));
    }
    &__field:focus + .input__label {
       color: hsl(var(--clr-accent));
@@ -147,7 +176,7 @@ a {
       font-size: var(--fs-200);
       letter-spacing: var(--ls-4);
       font-weight: var(--fw-regular);
-      color: hsl(var(--clr-dark-gray));
+      color: hsl(var(--clr-dark));
    }
 }
 .login__form-btn {
@@ -156,9 +185,8 @@ a {
 }
 .login__alt {
    font-size: var(--fs-150);
-   color: hsl(var(--clr-dark-gray));
+   color: hsl(var(--clr-dark));
 }
-
 .login__link {
    font-size: var(--fs-200);
    font-weight: var(--fw-medium);
@@ -166,5 +194,29 @@ a {
       font-weight: var(--fw-bold);
       text-decoration: underline;
       color: hsl(var(--clr-accent));
+   }
+}
+
+.footer{
+   color: hsl(var(--clr-white));
+}
+.footer__support-links {
+   a{
+      color: hsl(var(--clr-white));
+   }
+   list-style: none;
+   a:hover{
+      color: hsl(var(--clr-accent));
+      text-decoration: underline;
+   }
+}
+.footer__social-links {
+   a{
+      color: hsl(var(--clr-white));
+   }
+   list-style: none;
+   a:hover{
+      color: hsl(var(--clr-accent));
+      text-decoration: underline;
    }
 }

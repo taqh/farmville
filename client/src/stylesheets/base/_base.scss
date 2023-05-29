@@ -1,9 +1,22 @@
-#app{
+#app {
    display: grid;
 }
-button{
+button {
    border: 0;
    cursor: pointer;
    outline: transparent;
    background: transparent;
+}
+
+::-webkit-scrollbar {
+   width: 0.875rem;
+}
+::-webkit-scrollbar-track {
+   background: #dad7d7;
+   
+}
+::-webkit-scrollbar-thumb {
+   border-radius: 100vw;
+   background: hsl(var(--clr-blue));
+   border: .15rem #dad7d7 solid;
 }

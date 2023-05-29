@@ -10,7 +10,7 @@
       padding-block: 0.65rem;
       border-radius: 0.3125em;
       padding-inline: 0.75rem 2.5rem;
-      border: 0.15625em solid hsl(var(--clr-light-gray));
+      border: 0.15625em solid hsl(var(--clr-gray));
       &::placeholder {
          color: transparent;
       }
@@ -35,7 +35,7 @@
    padding: 0;
    transform: translateY(0);
    font-size: var(--fs-200);
-   color: hsl(var(--clr-dark-gray));
+   color: hsl(var(--clr-dark));
 }
 
 .login__form-btn {
@@ -51,7 +51,7 @@
    }
 }
 .eye {
-   fill: hsl(var(--clr-dark-gray));
+   fill: hsl(var(--clr-dark));
    &:hover {
       fill: hsl(var(--clr-accent));
    }

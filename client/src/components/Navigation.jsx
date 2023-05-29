@@ -17,7 +17,7 @@ function Navigation() {
          <header>
             <div className='header'>
                <Link to='/' className='logo'>
-                  Farmville
+                  farmville
                </Link>
                <span className='blur' aria-hidden='true'></span>
                <nav>

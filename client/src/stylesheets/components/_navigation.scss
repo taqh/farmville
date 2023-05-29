@@ -2,8 +2,20 @@
 
 header {
    padding: var(--spacing);
+   background-color: hsl(var(--clr-white));
+   @include u.breakpoint-down(screen-md) {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+   }
    @include u.breakpoint(screen-md) {
       padding-inline: 0;
+   }
+}
+.logo {
+   &:focus-visible {
+      outline: 3px hsl(var(--clr-accent)) solid;
+      outline-offset: 4px;
    }
 }
 .header {
@@ -49,7 +61,7 @@ header {
    .header__nav {
       z-index: 5;
       position: fixed;
-      inset: 4rem 0 0 30%;
+      inset: 4rem 0 0 0;
       flex-direction: column;
       transform: translateX(100%);
       padding-block: min(20rem, 15vh) 2rem;
@@ -71,12 +83,18 @@ header {
       padding-block: 0.3rem;
    }
 }
-
+.link,
+.link--active {
+   &:focus-visible {
+      outline: 3px hsl(var(--clr-accent)) solid;
+      outline-offset: 4px;
+   }
+}
 .link {
    &-num {
       margin-right: 0.5em;
    }
-   &:focus::after {
+   &:focus-visible::after {
       transform: scaleY(1);
       transform-origin: top;
    }
@@ -108,7 +126,7 @@ header {
          transform: scaleX(0);
          transform-origin: bottom right;
       }
-      &:focus::after {
+      &:focus-visible::after {
          transform: scaleX(1);
          transform-origin: bottom left;
       }
@@ -133,6 +151,10 @@ header {
    border: 0.15rem solid hsl(var(--clr-accent));
    &:hover {
       background: hsl(var(--clr-white));
+   }
+   &:focus-visible {
+      outline: 3px hsl(var(--clr-accent)) solid;
+      outline-offset: 4px;
    }
    @include u.breakpoint-down(screen-md) {
       margin-inline: 2rem;

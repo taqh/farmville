@@ -1,0 +1,60 @@
+@use '../utilities/' as u;
+
+footer {
+   background: hsl(var(--clr-blue));
+   padding: var(--spacing);
+   border-top-right-radius: 20%;
+   @include u.breakpoint(screen-sm) {
+      padding-block: 4rem;
+   }
+}
+
+.footer {
+   display: grid;
+   gap: var(--spacing);
+   grid-template-columns: 1fr 1fr;
+   grid-template-rows: 1fr auto;
+   @include u.breakpoint(screen-sm) {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr;
+   }
+   @include u.breakpoint(screen-md) {
+      margin-inline: auto;
+      max-width: calc(var(--max-width) + var(--spacing) * 2);
+   }
+}
+
+.footer__attribution {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   @include u.breakpoint-down(screen-sm) {
+      grid-row: span 2;
+   }
+}
+
+.footer__social-links {
+   display: flex;
+   gap: var(--gap);
+   padding: 0;
+   fill: hsl(var(--clr-white));
+   @include u.breakpoint-down(screen-sm) {
+      grid-column: 2;
+      grid-row: 2;
+   }
+}
+
+.footer__support-links {
+   list-style: none;
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+   padding: 0;
+
+   li:hover {
+   }
+}
+
+.logo--footer {
+   width: fit-content;
+}

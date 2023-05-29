@@ -6,6 +6,7 @@ import LandingPage from './pages/Landing';
 import RootLayout from './routes/Root';
 import Error from './pages/Error';
 import AboutPage from './pages/About';
+import ServicePage from './pages/Services';
 import ContactPage from './pages/Contact';
 import './stylesheets/main.scss';
 
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
          { path: '/login', element: <LoginPage /> },
          { path: '/register', element: <SignUpPage /> },
          { path: '/about', element: <AboutPage /> },
+         { path: '/services', element: <ServicePage /> },
          { path: '/contact', element: <ContactPage /> },
       ],
    },

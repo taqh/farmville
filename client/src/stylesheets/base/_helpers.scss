@@ -1,11 +1,16 @@
 :root{
-	--gap: clamp(1.5rem, calc(1rem + 3vw), 3rem);
+	--gap: clamp(1rem, calc(0.75rem + 1vw), 2rem);
 	--max-width: 75.5rem;
 	--spacing: 1rem;
 }
-@media (min-width: 51.25em) {
+@media (min-width: 29.6875em) {
 	:root{
 		--spacing: 1.5rem;
+	}
+}
+@media (min-width: 51.25em) {
+	:root{
+		--spacing: 1.75rem;
 	}
 }
 
@@ -23,17 +28,21 @@
 
 .skip-to-content {
    z-index: 9999;
-	padding: 0.5em 1em;
+	padding: 0.75em 1em;
 	position: absolute;
-	margin-inline: auto;
-	transform: translateY(-100%);
+	left: var(--spacing);
+	font-size: var(--fs-350);
+	font-weight: var(--fw-bold);
+	transform: translateY(-105%);
 	color: hsl(var(--clr-white));
 	background: hsl(var(--clr-accent));
-	transition: transform 250ms ease-in;
+	transition: transform 200ms ease;
 }
 
 .skip-to-content:focus {
-	transform: translateY(0);
+	outline-offset: 4px;
+	transform: translateY(1.125rem);
+	outline: 3px hsl(var(--clr-accent)) solid;
 }
 
 .color-effect {

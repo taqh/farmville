@@ -1,5 +1,6 @@
 import { Outlet, useLocation } from 'react-router-dom';
 import Navigation from '../components/Navigation';
+import Footer from '../components/Footer';
 
 function RootLayout() {
    const { pathname } = useLocation();
@@ -12,6 +13,7 @@ function RootLayout() {
          <main>
             <Outlet />
          </main>
+         {!isLoggingIn && <Footer />}
       </>
    );
 }
