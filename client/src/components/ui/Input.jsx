@@ -1,24 +1,28 @@
 import { FaEyeSlash, FaEye } from 'react-icons/fa';
 import { useState } from 'react';
 
-const InputGroup = (props) => {
+const InputGroup = ({ type, id, label, pass }) => {
    const [showPassword, setShowPassword] = useState(false);
    const [isValid, setIsValid] = useState(false);
+   if (pass) {
+      type = showPassword ? 'text' : 'password';
+   }
+
 
    return (
       <div className={`input ${!isValid && 'input--error'}`}>
          <input
-            type={props.type}
-            id={props.id}
-            className={`input__field`}
+            type={type}
+            id={id}
+            className='input__field'
             name='password'
-            placeholder={props.label}
+            placeholder={label}
             autoComplete='off'
          />
-         <label htmlFor={props.id} className='input__label'>
-            {props.label}
+         <label htmlFor={id} className='input__label'>
+            {label}
          </label>
-         {props.type === 'password' && (
+         {pass && (
             <button
                onClick={() => setShowPassword(!showPassword)}
                type='button'
@@ -26,9 +30,9 @@ const InputGroup = (props) => {
             >
                <span className='sr-only'>make password visibile</span>
                {showPassword ? (
-                  <FaEye className='eye' />
-               ) : (
                   <FaEyeSlash className='eye' />
+               ) : (
+                  <FaEye className='eye' />
                )}
             </button>
          )}

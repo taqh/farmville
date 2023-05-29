@@ -14,15 +14,15 @@
       &::placeholder {
          color: transparent;
       }
-      &:focus {
+      &:focus-visible {
          border: hsl(var(--clr-accent)) 0.15625em solid;
       }
    }
    &__label {
       top: 0.85rem;
-      left: 0.6rem;
+      left: 0.75rem;
       position: absolute;
-      padding: 1px 0.5rem;
+      padding: 1px 0.3125rem;
       transition: all 200ms ease;
       transform: translateY(-110%);
       background: hsl(var(--clr-white));
@@ -30,8 +30,8 @@
 }
 
 .input__field:placeholder-shown + .input__label {
+   top: 0.85rem;
    left: 1rem;
-   top: 0.6;
    padding: 0;
    transform: translateY(0);
    font-size: var(--fs-200);
@@ -45,9 +45,9 @@
    background: hsl(var(--clr-accent));
    transition: color, background 300ms ease;
    border: 0.15rem solid hsl(var(--clr-accent));
-   &:focus {
-      background: hsl(var(--clr-white));
-      border: 0.15rem solid hsl(var(--clr-accent));
+   &:focus-visible {
+      outline: 0.15rem solid hsl(var(--clr-accent));
+      outline-offset: 3px;
    }
 }
 .eye {
@@ -64,7 +64,7 @@
    max-width: fit-content;
    transform: translate(-50%, -50%);
    background-color: hsl(var(--clr-white));
-   &:focus {
-      outline: 0.15rem solid hsl(var(--clr-accent));
+   &:focus-visible .eye {
+      fill: hsl(var(--clr-accent));
    }
 }

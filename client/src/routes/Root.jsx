@@ -2,8 +2,9 @@ import { Outlet, useLocation } from 'react-router-dom';
 import Navigation from '../components/Navigation';
 
 function RootLayout() {
-   const location = useLocation();
-   const isLoggingIn = location.pathname.substring(1) === 'login' || 'register';
+   const { pathname } = useLocation();
+   const path = pathname.substring(1);
+   const isLoggingIn = path === 'login' || path === 'register';
 
    return (
       <>

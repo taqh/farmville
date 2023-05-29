@@ -1,6 +1,6 @@
 @use '../utilities' as u;
 
-header{
+header {
    padding: var(--spacing);
    @include u.breakpoint(screen-md) {
       padding-inline: 0;
@@ -15,10 +15,10 @@ header{
    background-color: hsl(var(--clr-white));
    @include u.breakpoint(screen-md) {
       margin-inline: auto;
-      max-width: calc(var(--max-width) + var(--spacing)*2);
+      max-width: calc(var(--max-width) + var(--spacing) * 2);
    }
 
-	&__nav {
+   &__nav {
       padding: 0;
       display: flex;
       list-style: none;
@@ -26,32 +26,30 @@ header{
       background-color: hsl(var(--clr-white));
       transition: 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
    }
-   nav::after {
+   .blur {
       content: '';
       inset: 0;
       z-index: 2;
       width: 100%;
       height: 100%;
-		position: absolute;
-		transform: translateX(-100%);
+      position: absolute;
+      transform: translateX(-100%);
       background: rgba(0, 0, 0, 0.75);
       transition: transform 250ms ease-in;
-	}
-   
-   .toggle[aria-expanded='true'] + nav {
-      &::after {
-         @include u.breakpoint-down(screen-md) {
-            transform: translateX(0);
-         }
+   }
+
+   .toggle[aria-expanded='true'] + .blur {
+      @include u.breakpoint-down(screen-md) {
+         transform: translateX(0);
       }
-   } 
+   }
 }
 
 @include u.breakpoint-down(screen-md) {
    .header__nav {
       z-index: 5;
       position: fixed;
-      inset: 0 0 0 30%;
+      inset: 4rem 0 0 30%;
       flex-direction: column;
       transform: translateX(100%);
       padding-block: min(20rem, 15vh) 2rem;
@@ -127,13 +125,16 @@ header{
    background-color: hsl(var(--clr-accent));
 }
 
-.login-btn{
-	padding: 0.375em 1em;
-	border-radius: 0.3125rem;
-	background: hsl(var(--clr-accent));
-	transition: color, background 300ms ease;
-	border: 0.15rem solid hsl(var(--clr-accent));
-	&:hover{
-		background: hsl(var(--clr-white));
-	}
+.login-btn {
+   padding: 0.375em 1.5em;
+   border-radius: 0.3125rem;
+   background: hsl(var(--clr-accent));
+   transition: color, background 300ms ease;
+   border: 0.15rem solid hsl(var(--clr-accent));
+   &:hover {
+      background: hsl(var(--clr-white));
+   }
+   @include u.breakpoint-down(screen-md) {
+      margin-inline: 2rem;
+   }
 }

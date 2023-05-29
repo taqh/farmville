@@ -30,7 +30,7 @@
    --fw-medium: 500;
    --fw-semi-bold: 600;
    --fw-bold: 700;
-   --fw-extra-bold: 700;
+   --fw-extra-bold: 800;
 }
 
 // @media (min-width: 29.6875em) {
@@ -83,12 +83,15 @@ a {
    transition: color 300ms ease;
 }
 
-.hero {
-   &__heading {
+.hero__description {
+   .hero__heading {
       font-size: var(--fs-400);
-      font-weight: var(--fw-extra-bold);
-      letter-spacing: var(--ls-2);
+      font-weight: var(--fw-bold);
+      @include u.breakpoint-down(screen-md) {
+         text-align: center;
+      }
       @include u.breakpoint(screen-md) {
+         letter-spacing: var(--ls-3);
          font-size: var(--fs-600);
       }
    }
@@ -103,13 +106,31 @@ a {
       font-weight: var(--fw-semi-bold);
       letter-spacing: var(--ls-2);
       @include u.breakpoint(screen-md) {
-         font-size: var(--fs-350);
+         font-size: var(--fs-300);
       }
       &:first-of-type {
          color: hsl(var(--clr-white));
       }
    }
 }
+
+.features{
+   text-align: center;
+}
+.features__header{
+   h2{
+      font-size: var(--fs-400);
+   }
+}
+.features__tab-btn{
+   font-size: var(--fs-300);
+   font-weight: var(--fw-medium);
+   transition: color 250ms ease;
+   &:hover{
+      color: hsl(var(--clr-accent));
+   }
+}
+
 
 .input {
    &__label {
@@ -132,9 +153,6 @@ a {
 .login__form-btn {
    color: hsl(var(--clr-white));
    font-weight: var(--fw-medium);
-   &:focus {
-      color: hsl(var(--clr-accent));
-   }
 }
 .login__alt {
    font-size: var(--fs-150);

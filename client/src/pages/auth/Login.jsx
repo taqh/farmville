@@ -25,9 +25,9 @@ function Login() {
          </div>
          <form className='login__form'>
             <Input type='email' label='Email' id='email' />
-            <Input type='password' label='Password' id='password' />
+            <Input type='password' label='Password' id='password' pass='true' />
             <button className='login__form-btn' onClick={handleSubmit}>
-               Sign in
+               Log in
             </button>
          </form>
          <div className='login__alt'>

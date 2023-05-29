@@ -1,0 +1,35 @@
+@use '../utilities/' as u;
+
+.error {
+   padding: var(--spacing);
+   display: grid;
+   min-height: 100vh;
+   place-items: center;
+   margin-inline: auto;
+   text-align: center;
+   color: hsl(var(--clr-dark-gray));
+   @include u.breakpoint-down(screen-md) {
+      font-size: var(--fs-400);
+   }
+   @include u.breakpoint(screen-md) {
+      margin-inline: auto;
+      max-width: calc(var(--max-width) + var(--spacing) * 2);
+   }
+}
+
+.development {
+   padding: var(--spacing);
+   display: grid;
+   min-height: 100vh;
+   place-items: center;
+   margin-inline: auto;
+   text-align: center;
+   @include u.breakpoint-down(screen-md) {
+      font-size: var(--fs-150);
+   }
+   color: hsl(var(--clr-dark-gray));
+   @include u.breakpoint(screen-md) {
+      margin-inline: auto;
+      max-width: calc(var(--max-width) + var(--spacing) * 2);
+   }
+}

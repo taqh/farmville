@@ -5,6 +5,8 @@ import SignUpPage from './pages/auth/SignUp';
 import LandingPage from './pages/Landing';
 import RootLayout from './routes/Root';
 import Error from './pages/Error';
+import AboutPage from './pages/About';
+import ContactPage from './pages/Contact';
 import './stylesheets/main.scss';
 
 const router = createBrowserRouter([
@@ -16,6 +18,8 @@ const router = createBrowserRouter([
          { index: true, element: <LandingPage /> },
          { path: '/login', element: <LoginPage /> },
          { path: '/register', element: <SignUpPage /> },
+         { path: '/about', element: <AboutPage /> },
+         { path: '/contact', element: <ContactPage /> },
       ],
    },
 ]);

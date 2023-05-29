@@ -12,19 +12,24 @@ function Navigation() {
    return (
       <>
          <a className='skip-to-content' href='#main'>
-            Skip to content
+            Skip to main content
          </a>
          <header>
             <div className='header'>
                <Link to='/' className='logo'>
                   Farmville
                </Link>
+               <span className='blur' aria-hidden='true'></span>
+               <nav>
                <NavToggle
                   onToggle={showMenu}
                   onClick={() => setShowMenu(!showMenu)}
                />
-               <nav>
-                  <ul data-visible={showMenu} className='header__nav'>
+                  <ul
+                     data-visible={showMenu}
+                     className='header__nav'
+                     id='primary-navigation'
+                  >
                      {loginStatus && (
                         <li>
                            <NavLink
@@ -41,7 +46,7 @@ function Navigation() {
                      )}
                      <li>
                         <NavLink
-                           to='/destination'
+                           to='/about'
                            className={({ isActive }) =>
                               isActive ? 'link--active' : 'link'
                            }
@@ -52,7 +57,7 @@ function Navigation() {
                      </li>
                      <li>
                         <NavLink
-                           to='/crew'
+                           to='/services'
                            className={({ isActive }) =>
                               isActive ? 'link--active' : 'link'
                            }
@@ -63,13 +68,13 @@ function Navigation() {
                      </li>
                      <li>
                         <NavLink
-                           to='/technology'
+                           to='/contact'
                            className={({ isActive }) =>
                               isActive ? 'link--active' : 'link'
                            }
                            onClick={() => setShowMenu(!showMenu)}
                         >
-                           Features
+                           Contact
                         </NavLink>
                      </li>
                      <Link
