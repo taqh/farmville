@@ -1,22 +1,36 @@
-import { useState } from 'react';
+import { useReducer } from 'react';
+import userReducer from './UserReducer';
 import UserContext from './UserContext';
+import { user_actions } from './UserReducer';
+import { initialUserState } from './UserContext';
 
 function UserProvider({ children }) {
-   const [isLoggedIn, setIsLoggedIn] = useState(false);
-   const [userCategory, setUserCategory] = useState(null);
+   const [userState, dispatch] = useReducer(userReducer, initialUserState);
 
-   const handleSignUp = (type) => {
-      setUserCategory(type);
+   const signup = (data) => {
+      dispatch({ type: user_actions.LOGIN, payload: data });
+      console.log(data);
    };
-   const handleLogin = () => {
-      setIsLoggedIn((prevStatus) => !prevStatus);
+
+   const login = (data) => {
+      dispatch({ type: user_actions.LOGIN, payload: data });
+      console.log(data);
    };
+
+   const Logout = (data) => {
+      dispatch({ type: user_actions.LOGOUT, payload: data });
+      console.log(data);
+   };
+   const status = userState.loginStatus;
+
    const userValue = {
-      loginStatus: isLoggedIn,
-      updateStatus: handleLogin,
-      userCategory: userCategory,
-      createAccount: handleSignUp,
+      loginStatus: status,
+      userData: userState,
+      exitAccount: Logout,
+      accessAccount: login,
+      createAccount: signup,
    };
+
    return (
       <UserContext.Provider value={userValue}>{children}</UserContext.Provider>
    );

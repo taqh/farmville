@@ -2,12 +2,13 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import UserContext from '../context/UserContext';
 import { useContext, useState } from 'react';
 import NavToggle from './NavToggle';
-
+import basket from '../assets/basket.svg'
 function Navigation() {
    const [showMenu, setShowMenu] = useState(false);
-   const { loginStatus } = useContext(UserContext);
+   const { userData } = useContext(UserContext);
    const location = useLocation();
    const isLoggingIn = location.pathname.substring(1) === 'login';
+   const { loginStatus } = userData;
 
    return (
       <>
@@ -16,15 +17,21 @@ function Navigation() {
          </a>
          <header>
             <div className='header'>
-               <Link to='/' className='logo'>
-                  farmville
-               </Link>
+               {loginStatus ? (
+                  <Link to='/home' className='logo'>
+                     farmville
+                  </Link>
+               ) : (
+                  <Link to='/' className='logo'>
+                     farmville
+                  </Link>
+               )}
                <span className='blur' aria-hidden='true'></span>
                <nav>
-               <NavToggle
-                  onToggle={showMenu}
-                  onClick={() => setShowMenu(!showMenu)}
-               />
+                  <NavToggle
+                     onToggle={showMenu}
+                     onClick={() => setShowMenu(!showMenu)}
+                  />
                   <ul
                      data-visible={showMenu}
                      className='header__nav'
@@ -33,57 +40,66 @@ function Navigation() {
                      {loginStatus && (
                         <li>
                            <NavLink
-                              to='/'
+                              to='/market'
                               className={({ isActive }) =>
                                  isActive ? 'link--active' : 'link'
                               }
                               end
                               onClick={() => setShowMenu(!showMenu)}
                            >
-                              Home
+                              Market
                            </NavLink>
                         </li>
                      )}
-                     <li>
-                        <NavLink
-                           to='/about'
-                           className={({ isActive }) =>
-                              isActive ? 'link--active' : 'link'
-                           }
-                           onClick={() => setShowMenu(!showMenu)}
-                        >
-                           About
-                        </NavLink>
-                     </li>
-                     <li>
-                        <NavLink
-                           to='/services'
-                           className={({ isActive }) =>
-                              isActive ? 'link--active' : 'link'
-                           }
-                           onClick={() => setShowMenu(!showMenu)}
-                        >
-                           Services
-                        </NavLink>
-                     </li>
-                     <li>
-                        <NavLink
-                           to='/contact'
-                           className={({ isActive }) =>
-                              isActive ? 'link--active' : 'link'
-                           }
-                           onClick={() => setShowMenu(!showMenu)}
-                        >
-                           Contact
-                        </NavLink>
-                     </li>
-                     <Link
-                        to='/login'
-                        className='login-btn'
-                        onClick={() => setShowMenu(!showMenu)}
-                     >
-                        Login
-                     </Link>
+                     {!loginStatus && (
+                        <>
+                           <li>
+                              <NavLink
+                                 to='/about'
+                                 className={({ isActive }) =>
+                                    isActive ? 'link--active' : 'link'
+                                 }
+                                 onClick={() => setShowMenu(!showMenu)}
+                              >
+                                 About
+                              </NavLink>
+                           </li>
+                           <li>
+                              <NavLink
+                                 to='/services'
+                                 className={({ isActive }) =>
+                                    isActive ? 'link--active' : 'link'
+                                 }
+                                 onClick={() => setShowMenu(!showMenu)}
+                              >
+                                 Services
+                              </NavLink>
+                           </li>
+                           <li>
+                              <NavLink
+                                 to='/contact'
+                                 className={({ isActive }) =>
+                                    isActive ? 'link--active' : 'link'
+                                 }
+                                 onClick={() => setShowMenu(!showMenu)}
+                              >
+                                 Contact
+                              </NavLink>
+                           </li>
+                           <Link
+                              to='/login'
+                              className='login-btn'
+                              onClick={() => setShowMenu(!showMenu)}
+                           >
+                              Login
+                           </Link>
+                        </>
+                     )}
+                     {loginStatus && 
+                        <button>
+                           <img src={basket} className='cart'/>
+                        </button>
+                     }
                   </ul>
                </nav>
             </div>

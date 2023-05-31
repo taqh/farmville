@@ -7,6 +7,8 @@ import RootLayout from './routes/Root';
 import Error from './pages/Error';
 import AboutPage from './pages/About';
 import ServicePage from './pages/Services';
+import HomePage from './pages/Home';
+import MarketPage from './pages/Market';
 import ContactPage from './pages/Contact';
 import './stylesheets/main.scss';
 
@@ -22,6 +24,8 @@ const router = createBrowserRouter([
          { path: '/about', element: <AboutPage /> },
          { path: '/services', element: <ServicePage /> },
          { path: '/contact', element: <ContactPage /> },
+         { path: '/home', element: <HomePage /> },
+         { path: '/market', element: <MarketPage /> },
       ],
    },
 ]);

@@ -6,7 +6,7 @@ header {
    @include u.breakpoint-down(screen-md) {
       position: sticky;
       top: 0;
-      z-index: 2;
+      z-index: 10;
    }
    @include u.breakpoint(screen-md) {
       padding-inline: 0;
@@ -63,12 +63,15 @@ header {
       position: fixed;
       inset: 4rem 0 0 0;
       flex-direction: column;
-      transform: translateX(100%);
-      padding-block: min(20rem, 15vh) 2rem;
-      transition: transform 350ms ease-in-out;
-
+      // transform: translateX(100%);
+      max-height: 0;
+      overflow: hidden;
+      transition: all 300ms ease-in-out;   
+      
       &[data-visible='true'] {
-         transform: translateX(0);
+         padding-block: min(8rem, 10vh) 3rem;
+         // transform: translateX(0);
+         max-height: 100%;
       }
    }
 }
@@ -158,5 +161,6 @@ header {
    }
    @include u.breakpoint-down(screen-md) {
       margin-inline: 2rem;
+      margin-top: auto;
    }
 }

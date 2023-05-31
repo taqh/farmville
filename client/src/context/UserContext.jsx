@@ -1,10 +1,19 @@
-import { createContext } from "react";
+import { createContext } from 'react';
 
-const UserContext = createContext({
+export const initialUserState = {
+   user: null,
+   error: null,
    loginStatus: false,
    userCategory: null,
-   updateStatus: () => {},
-   createAccount: () => {},
-})
+};
 
-export default UserContext
+const UserContext = createContext({
+   userData: {},
+   loginStatus: false,
+   userCategory: null,
+   exitAccount: () => {},
+   accessAccount: () => {},
+   createAccount: () => {},
+});
+
+export default UserContext;
