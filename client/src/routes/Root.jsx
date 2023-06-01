@@ -1,6 +1,6 @@
 import { Outlet, useLocation } from 'react-router-dom';
-import Navigation from '../components/Navigation';
-import Footer from '../components/Footer';
+import Navigation from '../components/landmark/Navigation';
+import Footer from '../components/landmark/Footer';
 
 function RootLayout() {
    const { pathname } = useLocation();

@@ -229,7 +229,7 @@ a {
       text-decoration: underline;
       font-size: var(--fs-400);
       &:hover {
-         color: hsl(var(--clr-primary));
+         color: hsl(var(--clr-red));
       }
    }
 }
@@ -238,6 +238,20 @@ a {
    text-transform: uppercase;
    max-width: 30ch;
    text-align: center;
+}
+
+.market__heading{
+   text-align: center;
+   text-transform: uppercase;
+}
+
+.product {
+   &__btn{
+      text-transform: uppercase;
+   }
+   &__title{
+      color: hsl(var(--clr-dark));
+   }
 }
 
 .footer {

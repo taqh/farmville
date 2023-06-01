@@ -23,7 +23,7 @@ function Home() {
          </div>
 
          <section className='categories'>
-            <h2>Whatever you need</h2>
+            <h2>Nourishing Variety</h2>
             <div className='categories__list'>
                <div className='category'>
                   <div className='detail'>
@@ -68,6 +68,14 @@ function Home() {
                <div className='category'>
                   <div className='detail'>
                      <span>Dairy</span>
+                     <Link to='/market' className='category__btn'>
+                        Shop now
+                     </Link>
+                  </div>
+               </div>
+               <div className='category'>
+                  <div className='detail'>
+                     <span>Spices</span>
                      <Link to='/market' className='category__btn'>
                         Shop now
                      </Link>

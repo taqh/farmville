@@ -1,8 +1,8 @@
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import UserContext from '../context/UserContext';
+import UserContext from '../../context/UserContext';
 import { useContext, useState } from 'react';
 import NavToggle from './NavToggle';
-import basket from '../assets/basket.svg'
+import basket from '../../assets/basket.svg'
 function Navigation() {
    const [showMenu, setShowMenu] = useState(false);
    const { userData } = useContext(UserContext);

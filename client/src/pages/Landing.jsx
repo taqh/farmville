@@ -26,18 +26,21 @@ function Landing() {
          <section className='hero'>
             <article className='hero__description'>
                <h1 className='hero__heading'>
-                  Get the best agricultural produce fresh from farms close to
-                  you
+                  Discover the Freshest Agricultural Produce Direct from Local
+                  Farms
                </h1>
                <p>
-                  Our platform matches farm owners with companies willing to
-                  provide them with the tools they need to succeed. From
-                  fertilizers to fully functional irrigation systems, Farmville
-                  makes it easy to grow agricultural businesses.
+                  Step into a world where the finest agricultural treasures
+                  await, sourced fresh from farms in close proximity to you. Our
+                  platform is dedicated to connecting you with a diverse range
+                  of farm owners who passionately cultivate the highest quality
+                  produce. Experience the joy of indulging in farm-fresh flavors
+                  while supporting local agriculture and fostering a sustainable
+                  food ecosystem.
                </p>
                <div className='hero__action'>
                   <button className='action-btn'>Get Started</button>
-                  <button className='action-btn'>Explore Services</button>
+                  <button className='action-btn'>Explore market</button>
                </div>
             </article>
             <div className='hero__illustration'>
@@ -51,8 +54,7 @@ function Landing() {
                <p>
                   Our aim is to make it quick and easy for farmers to access
                   companies looking to invest and provide them with the tools to
-                  improve their business. And also connect consumers that need
-                  to make large purchase of farm product.
+                  grow their business.
                </p>
             </div>
 
@@ -79,7 +81,7 @@ function Landing() {
                   role='tab'
                   onClick={() => setActiveTab('third')}
                >
-                  Establishments
+                  Companies
                </button>
             </ul>
 
@@ -90,10 +92,14 @@ function Landing() {
                   </div>
 
                   <article className='feature__desc'>
-                     <h3>Just in time</h3>
+                     <h3>Experience Delight</h3>
                      <p>
-                        Place your order for your required amount of items
-                        before havesting season.
+                        Embark on a captivating digital journey through our
+                        vibrant online farmplace, a virtual haven where the
+                        highest quality farm produce awaits. Immerse yourself in
+                        a world of carefully cultivated delights, nurtured by
+                        our dedicated local farmers who infuse each harvest with
+                        their passion and commitment.
                      </p>
                      <Link to='/services' className='learn-more'>
                         Learn more
@@ -109,10 +115,15 @@ function Landing() {
                   </div>
 
                   <article className='feature__desc'>
-                     <h3>Avoid perished goods</h3>
+                     <h3>Cultivate & Flourish</h3>
                      <p>
-                        Get your perishables sold just as they&apos;re available to
-                        avoid losses
+                        Through our user-friendly platform, you gain a unique
+                        opportunity to share your farming expertise and connect
+                        directly with a community of conscious consumers.
+                        Whether you cultivate succulent fruits, robust
+                        vegetables, or specialty crops, our online farmplace
+                        provides a digital stage for you to shine and present
+                        your harvest with pride.
                      </p>
                      <Link to='/services' className='learn-more'>
                         Learn more
@@ -128,11 +139,13 @@ function Landing() {
                   </div>
 
                   <article className='feature__desc'>
-                     <h3>Invest confidently</h3>
+                     <h3>Partner with Trusted Farms</h3>
                      <p>
-                        Our powerful search feature will help you find trusted
-                        farms in no time at all. No need to trawl through the
-                        market yourself.
+                        Invest with confidence in the future of agriculture.
+                        Join Farmville today and discover the transformative
+                        power of strategic partnerships with trusted farms,
+                        where your investments pave the way for a sustainable,
+                        thriving agricultural landscape.
                      </p>
                      <Link to='/services' className='learn-more'>
                         Learn more
@@ -143,8 +156,29 @@ function Landing() {
          </section>
 
          <section className='section'>
+            <h1>Empowering Farm Owners for Success</h1>
             <div>
-
+               <p>
+                  At Farmville, we understand that thriving agricultural
+                  businesses require more than just passion and dedication.
+                  That&apos;s why we go the extra mile to match farm owners with
+                  reputable companies that provide the essential tools and
+                  resources needed for success. From essential fertilizers to
+                  state-of-the-art irrigation systems, our platform streamlines
+                  the process, making it effortless for farmers to access the
+                  tools that fuel their growth and yield exceptional harvests.
+               </p>
+            </div>
+            <div>
+               <p>
+                  Join our community of farm enthusiasts and agricultural
+                  innovators, and embark on a journey where the freshest produce
+                  and farming success converge. Experience the transformative
+                  power of direct farm-to-table connections, where your support
+                  directly impacts local farmers and the communities they
+                  nourish. At Farmville, we&apos;re committed to cultivating a
+                  sustainable future, one harvest at a time.
+               </p>
             </div>
          </section>
       </>

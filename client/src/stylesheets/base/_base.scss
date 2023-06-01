@@ -1,12 +1,17 @@
 #root {
    display: grid;
    min-height: 100vh;
+   // grid-template-rows: auto 1fr auto;
+}
+main{
+   min-height: 90vh;
 }
 button {
    border: 0;
    cursor: pointer;
    outline: transparent;
    background: transparent;
+   transition: 300ms ease-out;
 }
 ::-webkit-scrollbar {
    width: 0.875rem;
