@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 
-function Home() {
+function Explore() {
    const navigate = useNavigate();
    return (
       <>
@@ -10,15 +10,19 @@ function Home() {
                your local farmers
             </h1>
             <Link to='/market' className='explore__btn'>
-               To Market
+               Visit Market
             </Link>
          </section>
 
          <div className='container intro__text'>
             <p>
-               here to provide <span className='color-effect'>high-quality</span> farm produce, while
-               also being
-               <span className='color-effect'> environmentally responsible.</span>
+               here to provide{' '}
+               <span className='color-effect'>high-quality</span> farm produce,
+               while also being
+               <span className='color-effect'>
+                  {' '}
+                  environmentally responsible.
+               </span>
             </p>
          </div>
 
@@ -105,4 +109,4 @@ function Home() {
    );
 }
 
-export default Home;
+export default Explore;

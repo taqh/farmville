@@ -5,9 +5,6 @@
    z-index: 10;
    gap: 0.3rem;
    display: flex;
-   // right: 1rem;
-   // top: 1.5rem;
-   // position: absolute;
    width: 1.5rem;
    margin: 0.125rem;
    flex-direction: column;
@@ -20,13 +17,13 @@
       width: 100%;
       height: 0.125rem;
       transition: 250ms ease;
-      background-color: hsl(var(--clr-dark));
+      background-color: hsl(var(--clr-blue));
    }
    .top[data-active='true'] {
       transform: translateY(0.25rem) rotate(45deg);
    }
    .bottom[data-active='true'] {
-      transform: translateY(-0.1rem) rotate(-45deg);
+      transform: translateY(-0.16rem) rotate(-45deg);
    }
    @include u.breakpoint(screen-md) {
       display: none;

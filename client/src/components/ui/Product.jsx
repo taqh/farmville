@@ -7,18 +7,22 @@ function Product(props) {
    };
 
    return (
-      <div className='product'>
-         <img src='' alt='product image' className='product__image' />
-         <div className='product__details'>
-            <div className='product__details-title'>
-               <h3 className='product-name'>
-                  <Link to={`/market/${props.store}`}>{props.name}</Link>
-               </h3>
-               <span>${props.price}</span>
+      <div className='stall'>
+         <img
+            src='https://images.unsplash.com/photo-1617235178117-a1f5fecb72bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=435&q=80'
+            alt='product image'
+            className='stall__image'
+         />
+         <div className='stall__details'>
+            <div className='stall__details-item'>
+               <Link to={`/market/${props.store}`} className='item-name'>
+                  {props.name}
+               </Link>
+               <span className='item-price'>${props.price}</span>
             </div>
-            <div className='product__details-desc'>product description</div>
+            <div className='stall__details-desc'>product description</div>
          </div>
-         <button className='product__btn' onClick={addProduct}>
+         <button className='stall__btn' onClick={addProduct}>
             add to basket
          </button>
       </div>

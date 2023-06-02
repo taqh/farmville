@@ -8,20 +8,20 @@ main{
 }
 button {
    border: 0;
+   padding: 0;
    cursor: pointer;
    outline: transparent;
    background: transparent;
    transition: 300ms ease-out;
 }
 ::-webkit-scrollbar {
-   width: 0.875rem;
+   width: 0.75rem;
 }
 ::-webkit-scrollbar-track {
    background: #dad7d7;
-   
 }
 ::-webkit-scrollbar-thumb {
    border-radius: 100vw;
    background: hsl(var(--clr-blue));
-   border: .15rem #dad7d7 solid;
+   border: 0.125rem #dad7d7 solid;
 }

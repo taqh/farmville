@@ -1,7 +1,6 @@
 import { BsGithub, BsLinkedin } from 'react-icons/bs';
 import { BsTwitter } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
-import location from '../../assets/images/icon-email.svg';
 
 function Footer() {
    return (

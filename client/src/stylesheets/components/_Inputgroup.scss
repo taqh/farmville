@@ -30,12 +30,10 @@
 }
 
 .input__field:placeholder-shown + .input__label {
-   top: 0.9rem;
+   top: 1rem;
    left: 1rem;
    padding: 0;
    transform: translateY(0);
-   font-size: var(--fs-200);
-   color: hsl(var(--clr-dark));
 }
 
 .login,

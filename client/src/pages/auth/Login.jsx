@@ -39,7 +39,7 @@ function Login() {
       setLoading(false);
    };
    useEffect(() => {
-      userData.loginStatus ? navigate('/home') : null;
+      userData.loginStatus ? navigate('/explore') : null;
    }, [navigate, userData.loginStatus]);
 
    return (
@@ -71,11 +71,11 @@ function Login() {
          </div>
          <div className='login__options'>
             <button className='option'>
-               <FcGoogle />
+               <FcGoogle aria-hidden='true'/>
                Google
             </button>
             <button className='option'>
-               <BsApple />
+               <BsApple aria-hidden='true'/>
                Apple
             </button>
          </div>

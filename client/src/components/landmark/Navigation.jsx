@@ -2,7 +2,10 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import UserContext from '../../context/UserContext';
 import { useContext, useState } from 'react';
 import NavToggle from './NavToggle';
-import basket from '../../assets/basket.svg'
+import basket from '../../assets/basket.svg';
+//
+import { GiBasket, GiFruitBowl } from 'react-icons/gi';
+
 function Navigation() {
    const [showMenu, setShowMenu] = useState(false);
    const { userData } = useContext(UserContext);
@@ -18,7 +21,7 @@ function Navigation() {
          <header>
             <div className='header'>
                {loginStatus ? (
-                  <Link to='/home' className='logo'>
+                  <Link to='/explore' className='logo'>
                      farmville
                   </Link>
                ) : (
@@ -95,11 +98,12 @@ function Navigation() {
                            </Link>
                         </>
                      )}
-                     {loginStatus && 
-                        <button>
-                           <img src={basket} className='cart'/>
+                     {loginStatus && (
+                        <button className='basket-btn'>
+                           <span className='sr-only'>View cart</span>
+                           <GiFruitBowl size='24' aria-hidden='true' />
                         </button>
-                     }
+                     )}
                   </ul>
                </nav>
             </div>

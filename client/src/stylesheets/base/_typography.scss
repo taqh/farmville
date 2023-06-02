@@ -6,18 +6,23 @@
    --ff-primary: 'Manrope', sans-serif;
 
    /* font-sizes */
-   --fs-900: clamp(5rem, 2.2rem + 8vw, 9.375rem);
-   --fs-800: 3.5rem;
-   --fs-700: 3rem;
-   --fs-600: 2.5rem;
-   --fs-500: 2rem;
-   --fs-400: 1.5rem;
-   --fs-350: 1.125rem;
-   --fs-300: 1rem;
-   --fs-200: 0.9375rem;
-   --fs-150: 0.875rem;
+   --fs-900: 3rem;
+   --fs-800: 2.5rem;
+   --fs-700: 2rem;
+   --fs-600: 1.5rem;
+   --fs-500: 1.375rem;
+   --fs-400: 1rem;
+   // --fs-300: 1rem;
+   --fs-200: 0.875rem;
    --fs-100: 0.75rem;
 
+   @media (min-width: 29.6875em) {
+      // --fs-800: 5rem;
+      // --fs-700: 2.5rem;
+      // --fs-600: 2rem;
+      --fs-600: 1.75rem;
+      --fs-400: 1.125rem;
+   }
    // letter-spacing
    --ls-1: 4.75px;
    --ls-2: 3.5px;
@@ -33,26 +38,7 @@
    --fw-extra-bold: 800;
 }
 
-// @media (min-width: 29.6875em) {
-// 	:root {
-// 		--fs-800: 5rem;
-// 		--fs-700: 2.5rem;
-// 		--fs-600: 1.5rem;
-// 		--fs-500: 1.25rem;
-// 		--fs-400: 1rem;
-// 	}
-// }
-
-// @media (min-width: 51.25em) {
-// 	:root {
-// 		--fs-800: 6.25rem;
-// 		--fs-700: 3.5rem;
-// 		--fs-600: 2rem;
-// 		--fs-500: 1.75rem;
-// 		--fs-400: 1.125rem;
-// 	}
-// }
-
+// some typographic reset
 body {
    color: hsl(var(--clr-dark));
    font-family: var(--ff-primary);
@@ -65,8 +51,10 @@ h3 {
 a {
    text-decoration: none;
 }
+
+// -------- Navigation -------- //
 .logo {
-   font-size: var(--fs-400);
+   font-size: var(--fs-500);
    font-weight: var(--fw-bold);
    color: hsl(var(--clr-blue));
    &--footer {
@@ -84,41 +72,41 @@ a {
 }
 .login-btn,
 .learn-more {
-   color: hsl(var(--clr-white));
    text-align: center;
+   color: hsl(var(--clr-white));
+   transition: color 250ms ease;
    &:hover {
       color: hsl(var(--clr-accent));
    }
-   transition: color 250ms ease;
 }
 
-.hero__description {
-   .hero__heading {
-      font-size: var(--fs-400);
+// -------- Landing page -------- //
+.hero {
+   &__heading {
+      text-align: center;
+      font-size: var(--fs-600);
       font-weight: var(--fw-bold);
-      @include u.breakpoint-down(screen-md) {
-         text-align: center;
-      }
       @include u.breakpoint(screen-md) {
          letter-spacing: var(--ls-3);
-         font-size: var(--fs-600);
+         font-size: var(--fs-900);
+         text-align: left;
       }
    }
    p {
       font-weight: var(--fw-regular);
-      @include u.breakpoint(screen-md) {
-         font-size: var(--fs-350);
-      }
+      font-size: var(--fs-400);
    }
-
-   .action-btn {
-      font-weight: var(--fw-semi-bold);
-      letter-spacing: var(--ls-2);
-      @include u.breakpoint(screen-md) {
-         font-size: var(--fs-300);
-      }
-      &:first-of-type {
-         color: hsl(var(--clr-white));
+   &__action {
+      .action-btn {
+         font-weight: var(--fw-semi-bold);
+         letter-spacing: var(--ls-2);
+         font-size: var(--fs-400);
+         &:first-of-type {
+            color: hsl(var(--clr-white));
+         }
+         &:last-of-type {
+            color: hsl(var(--clr-accent));
+         }
       }
    }
 }
@@ -126,26 +114,23 @@ a {
 .features__header {
    text-align: center;
    h2 {
-      font-size: var(--fs-400);
+      font-size: var(--fs-500);
    }
    p {
       max-width: 50ch;
+      font-size: var(--fs-400);
       @include u.breakpoint(screen-md) {
-         font-size: var(--fs-350);
          line-height: 1.7;
       }
    }
 }
 .feature__desc {
    h3 {
-      font-size: var(--fs-400);
+      font-size: var(--fs-500);
    }
    p {
       max-width: 40ch;
-      font-size: var(--fs-300);
-      @include u.breakpoint(screen-md) {
-         font-size: var(--fs-350);
-      }
+      font-size: var(--fs-400);
    }
    @include u.breakpoint-down(screen-md) {
       text-align: center;
@@ -153,7 +138,7 @@ a {
 }
 
 .features__tab-btn {
-   font-size: var(--fs-300);
+   font-size: var(--fs-400);
    font-weight: var(--fw-medium);
    transition: color 250ms ease;
    &:hover {
@@ -161,6 +146,27 @@ a {
    }
 }
 
+// -------- Login & signup -------- //
+.login,
+.signup {
+   &__form-btn {
+      color: hsl(var(--clr-white));
+      font-weight: var(--fw-medium);
+   }
+   &__alt {
+      font-size: var(--fs-200);
+      color: hsl(var(--clr-dark));
+   }
+   &__link {
+      font-size: var(--fs-200);
+      font-weight: var(--fw-medium);
+      a {
+         font-weight: var(--fw-bold);
+         text-decoration: underline;
+         color: hsl(var(--clr-accent));
+      }
+   }
+}
 .input {
    &__label {
       font-size: var(--fs-100);
@@ -180,37 +186,16 @@ a {
    }
 }
 
-.login,
-.signup {
-   &__form-btn {
-      color: hsl(var(--clr-white));
-      font-weight: var(--fw-medium);
-   }
-   &__alt {
-      font-size: var(--fs-150);
-      color: hsl(var(--clr-dark));
-   }
-   &__link {
-      font-size: var(--fs-200);
-      font-weight: var(--fw-medium);
-      a {
-         font-weight: var(--fw-bold);
-         text-decoration: underline;
-         color: hsl(var(--clr-accent));
-      }
-   }
-}
-
+// -------- explore page -------- //
 .explore__heading {
    color: hsl(var(--clr-white));
-   font-size: var(--fs-600);
+   font-size: var(--fs-800);
    text-align: center;
    max-width: 35ch;
 }
 .explore__btn {
    color: hsl(var(--clr-white));
 }
-
 .categories {
    h2 {
       font-size: var(--fs-700);
@@ -234,26 +219,68 @@ a {
    }
 }
 .intro__text {
-   font-size: var(--fs-600);
+   font-size: var(--fs-700);
    text-transform: uppercase;
    max-width: 30ch;
    text-align: center;
 }
 
-.market__heading{
+
+// -------- market page -------- //
+.market__heading {
    text-align: center;
    text-transform: uppercase;
 }
 
-.product {
-   &__btn{
-      text-transform: uppercase;
+.stall {
+   .item-name {
+      font-size: var(--fs-400);
+      color: hsl(var(--clr-blue));
+      font-weight: var(--fw-bold);
    }
-   &__title{
-      color: hsl(var(--clr-dark));
+   .item-price{
+      font-weight: var(--fw-bold);
+      color: hsl(var(--clr-accent));
+   }
+   &__btn {
+      text-transform: uppercase;
+      color: hsl(var(--clr-blue));
+      font-weight: var(--fw-semi-bold);
+   }
+
+}
+
+
+// -------- item detail page -------- //
+.item__name{
+   color: hsl(var(--clr-accent));
+}
+.item__desc {
+   font-size: var(--fs-400);
+   line-height: 1.7;
+}
+.detail-btn {
+   text-transform: uppercase;
+}
+.back-btn {
+   color: hsl(var(--clr-blue));
+   font-weight: var(--fw-semi-bold);
+   text-transform: uppercase;
+   &:hover {
+      color: hsl(var(--clr-accent));
    }
 }
 
+
+// -------- about page -------- //
+.about{
+   .breifing{
+      font-size: var(--fs-400);
+      line-height: 1.7;
+   }
+}
+
+// -------- footer -------- //
 .footer {
    color: hsl(var(--clr-white));
    &__support-links {
@@ -267,10 +294,10 @@ a {
       }
    }
    &__social-links {
+      list-style: none;
       a {
          color: hsl(var(--clr-white));
       }
-      list-style: none;
       a:hover {
          color: hsl(var(--clr-accent));
          text-decoration: underline;

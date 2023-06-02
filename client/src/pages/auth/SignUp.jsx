@@ -1,8 +1,8 @@
 import { useContext, useState, useEffect } from 'react';
 import Input from '../../components/ui/Input';
 import UserContext from '../../context/UserContext';
-import { FcGoogle } from 'react-icons/fc';
-import { BsApple } from 'react-icons/bs';
+// import { FcGoogle } from 'react-icons/fc';
+// import { BsApple } from 'react-icons/bs';
 import { Link, useNavigate } from 'react-router-dom';
 
 function SignUp() {
@@ -50,7 +50,7 @@ function SignUp() {
       setLoading(false);
    };
    useEffect(() => {
-      loginStatus ? navigate('/') : null;
+      loginStatus ? navigate('/login') : null;
    }, [navigate, loginStatus]);
 
    return (

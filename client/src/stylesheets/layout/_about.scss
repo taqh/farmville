@@ -1,0 +1,32 @@
+@use '../utilities/' as u;
+
+.about {
+   display: grid;
+   gap: var(--gap);
+   padding-block: 5rem;
+   &__section {
+      display: grid;
+      gap: var(--gap);
+      padding-inline: var(--spacing);
+      margin-block: var(--spacing);
+      @include u.breakpoint(screen-md) {
+         grid-template-columns: 0.9fr 1fr;
+      }
+   }
+   &__image {
+      min-width: 250px;
+      min-height: 300px;
+      background-color: hsl(var(--clr-secondary));
+      display: flex;
+      place-items: center;
+   }
+   &__heading{
+      margin-bottom: 1rem;
+   }
+
+   .intro{
+      display: grid;
+      gap: var(--gap);
+   }
+
+}

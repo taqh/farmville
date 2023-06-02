@@ -47,14 +47,17 @@
 .action-btn:first-of-type {
    border: none;
    padding: 0.85em;
-   border-radius: 0.5rem;
+   border-radius: 0.35rem;
    background-color: hsl(var(--clr-accent));
 }
 .action-btn:last-of-type {
    border: none;
    padding: 0.85em;
-   border-radius: 0.5rem;
-   background-color: hsl(var(--clr-secondary));
+   border-radius: 0.35rem;
+   border: 0.125rem solid hsl(var(--clr-accent));
+   &:hover {
+      background-color: hsl(var(--clr-secondary));
+   }
 }
 
 .features {
