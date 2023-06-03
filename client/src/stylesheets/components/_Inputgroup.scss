@@ -29,6 +29,18 @@
    }
 }
 
+.input--error{
+   .input__field {
+      border: 0.15625em solid hsl(var(--clr-red));
+      &:focus-visible {
+         border: hsl(var(--clr-accent)) 0.15625em solid;
+      }
+   }
+   .input__label {
+      color: hsl(var(--clr-red));
+   }
+}
+
 .input__field:placeholder-shown + .input__label {
    top: 1rem;
    left: 1rem;

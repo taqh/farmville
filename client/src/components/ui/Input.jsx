@@ -1,9 +1,17 @@
 import { FaEyeSlash, FaEye } from 'react-icons/fa';
 import { useState } from 'react';
 
-const InputGroup = ({ type, id, label, pass, onChange, value }) => {
+const InputGroup = ({
+   type,
+   id,
+   label,
+   pass,
+   onChange,
+   value,
+   onBlur,
+   isValid,
+}) => {
    const [showPassword, setShowPassword] = useState(false);
-   const [isValid, setIsValid] = useState(false);
    if (pass) {
       type = showPassword ? 'text' : 'password';
    }
@@ -12,13 +20,14 @@ const InputGroup = ({ type, id, label, pass, onChange, value }) => {
       <div className={`input ${!isValid && 'input--error'}`}>
          <input
             id={id}
-            type={type}
-            className='input__field'
             name={id}
-            autoComplete='off'
+            type={type}
             value={value}
+            onBlur={onBlur}
             placeholder={label}
             onChange={onChange}
+            autoComplete='off'
+            className='input__field'
          />
          <label htmlFor={id} className='input__label'>
             {label}

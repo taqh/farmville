@@ -186,6 +186,11 @@ a {
       color: hsl(var(--clr-dark));
    }
 }
+.input--error{
+   .input__label {
+      color: hsl(var(--clr-red));
+   }
+}
 
 // -------- explore page -------- //
 .explore__heading {

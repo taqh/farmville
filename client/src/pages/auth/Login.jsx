@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom';
 function Login() {
    const { accessAccount, userData } = useContext(UserContext);
    const [loading, setLoading] = useState(false);
+   const [isValid, seIsValid] = useState(true);
    const navigate = useNavigate();
    const [userInput, setUserInput] = useState({
       email: '',
@@ -54,6 +55,7 @@ function Login() {
                label='Email'
                id='email'
                onChange={handleChange}
+               isValid={isValid}
             />
             <Input
                type='password'
@@ -61,8 +63,11 @@ function Login() {
                id='password'
                pass='true'
                onChange={handleChange}
+               isValid={isValid}
             />
-            <button className='login__form-btn'>{loading ? 'logging you in' : 'Log in'}</button>
+            <button className='login__form-btn' disabled={loading}>
+               {loading ? 'logging you in' : 'Log in'}
+            </button>
          </form>
          <div className='login__alt'>
             <span></span>
@@ -71,11 +76,11 @@ function Login() {
          </div>
          <div className='login__options'>
             <button className='option'>
-               <FcGoogle aria-hidden='true'/>
+               <FcGoogle aria-hidden='true' />
                Google
             </button>
             <button className='option'>
-               <BsApple aria-hidden='true'/>
+               <BsApple aria-hidden='true' />
                Apple
             </button>
          </div>
