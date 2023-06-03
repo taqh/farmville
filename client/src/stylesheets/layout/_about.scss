@@ -3,22 +3,34 @@
 .about {
    display: grid;
    gap: var(--gap);
-   padding-block: 5rem;
+   padding-block: var(--spacing);
+   @include u.breakpoint(screen-md){
+      padding-block: 5rem;
+      
+   }
+   &__hero{
+      padding-inline: var(--spacing);
+      display: grid;
+      @include u.breakpoint(screen-md) {
+         grid-template-columns: 1fr 1fr;
+      }
+   }
    &__section {
       display: grid;
       gap: var(--gap);
       padding-inline: var(--spacing);
-      margin-block: var(--spacing);
+      margin-top: var(--spacing);
+      margin-bottom: 4rem;
       @include u.breakpoint(screen-md) {
-         grid-template-columns: 0.9fr 1fr;
+         grid-template-columns: 1fr 1fr;
       }
    }
    &__image {
-      min-width: 250px;
-      min-height: 300px;
-      background-color: hsl(var(--clr-secondary));
       display: flex;
       place-items: center;
+      @include u.breakpoint-down(screen-sm){
+         grid-row: 1;
+      }
    }
    &__heading{
       margin-bottom: 1rem;
@@ -28,5 +40,9 @@
       display: grid;
       gap: var(--gap);
    }
-
+   .breifing{
+      p{
+         margin-block: 1rem;
+      }
+   }
 }

@@ -8,7 +8,7 @@ function UserProvider({ children }) {
    const [userState, dispatch] = useReducer(userReducer, initialUserState);
 
    const signup = (data) => {
-      dispatch({ type: user_actions.LOGIN, payload: data });
+      dispatch({ type: user_actions.SIGNUP, payload: data });
       console.log(data);
    };
 

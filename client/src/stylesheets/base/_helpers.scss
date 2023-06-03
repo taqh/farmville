@@ -1,15 +1,11 @@
 :root {
    --gap: clamp(1rem, calc(0.75rem + 1vw), 2rem);
-   --max-width: 75.5rem;
+   --max-width: 75rem;
    --spacing: 1rem;
-}
-@media (min-width: 29.6875em) {
-   :root {
+   @media (min-width: 29.6875em) {
       --spacing: 1.5rem;
    }
-}
-@media (min-width: 51.25em) {
-   :root {
+   @media (min-width: 51.25em) {
       --spacing: 1.75rem;
    }
 }
@@ -53,4 +49,21 @@
    background: linear-gradient(120deg, hsl(137, 83%, 65%), hsl(167, 83%, 45%));
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
+}
+
+@keyframes slide-in {
+   0% {
+       transform: translateY(2.5rem);
+   } 
+   100% {
+       transform: translateY(0);
+   }
+}
+@keyframes fade-in {
+   0% {
+       opacity: 0;
+   } 
+   100% {
+       opacity: 1;
+   }
 }

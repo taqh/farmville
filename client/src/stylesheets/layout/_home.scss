@@ -5,7 +5,7 @@
    display: grid;
    padding: var(--spacing);
    @include u.breakpoint(screen-md) {
-      grid-template-columns: 1.2fr 1fr;
+      grid-template-columns: 1.3fr 1fr;
       max-width: calc(var(--max-width) + var(--spacing) * 2);
       margin-inline: auto;
    }

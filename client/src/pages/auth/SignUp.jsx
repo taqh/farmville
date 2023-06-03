@@ -1,12 +1,15 @@
 import { useContext, useState, useEffect } from 'react';
 import Input from '../../components/ui/Input';
 import UserContext from '../../context/UserContext';
-// import { FcGoogle } from 'react-icons/fc';
-// import { BsApple } from 'react-icons/bs';
+import { FcGoogle } from 'react-icons/fc';
+import { BsApple } from 'react-icons/bs';
 import { Link, useNavigate } from 'react-router-dom';
+import ModalContext from '../../context/ModalContext';
+import Success from '../../components/modals/Success';
 
 function SignUp() {
    const { createAccount, loginStatus } = useContext(UserContext);
+   const { openModal, closeModal } = useContext(ModalContext);
    const [loading, setLoading] = useState(false);
    const navigate = useNavigate();
    const [userInput, setUserInput] = useState({
@@ -48,75 +51,80 @@ function SignUp() {
 
       createAccount(userInput);
       setLoading(false);
+      openModal();
    };
    useEffect(() => {
       loginStatus ? navigate('/login') : null;
+      // navigating wont work i should toggle a success modal instead
    }, [navigate, loginStatus]);
 
    return (
-      <div className='signup'>
-         <div className='signup__header'>
-            <h1>Sign up</h1>
-            <small>create a new account</small>
+      <>
+      <Success onClick={closeModal}/>
+         <div className='signup'>
+            <div className='signup__header'>
+               <h1>Sign up</h1>
+               <small>create a new account</small>
+            </div>
+            <form className='signup__form' onSubmit={handleSignup}>
+               <Input
+                  type='text'
+                  label='Firstname'
+                  id='firstname'
+                  onChange={handleChange}
+                  value={userInput.firstname}
+               />
+               <Input
+                  type='text'
+                  label='Lastname'
+                  id='lastname'
+                  onChange={handleChange}
+                  value={userInput.lastname}
+               />
+               <Input
+                  type='email'
+                  label='Email'
+                  id='email'
+                  onChange={handleChange}
+                  value={userInput.email}
+               />
+               <Input
+                  type='password'
+                  label='Password'
+                  id='password'
+                  pass='true'
+                  onChange={handleChange}
+                  value={userInput.value}
+               />
+               <Input
+                  type='password'
+                  label='Confirm Password'
+                  id='confirm'
+                  pass='true'
+               />
+               <button className='signup__form-btn'>Sign up</button>
+            </form>
+            <div className='signup__alt'>
+               <span></span>
+               <p className='continue'>Or Continue with</p>
+               <span></span>
+            </div>
+            <div className='signup__options'>
+               <button className='option'>
+                  <FcGoogle aria-hidden='true' />
+                  Google
+               </button>
+               <button className='option'>
+                  <BsApple aria-hidden='true' />
+                  Apple
+               </button>
+            </div>
+            <div className='login__link'>
+               <p>Have an account?</p>
+               <Link to='/login'>Login</Link>
+            </div>
          </div>
-         <form className='signup__form' onSubmit={handleSignup}>
-            <Input
-               type='text'
-               label='Firstname'
-               id='firstname'
-               onChange={handleChange}
-               value={userInput.firstname}
-            />
-            <Input
-               type='text'
-               label='Lastname'
-               id='lastname'
-               onChange={handleChange}
-               value={userInput.lastname}
-            />
-            <Input
-               type='email'
-               label='Email'
-               id='email'
-               onChange={handleChange}
-               value={userInput.email}
-            />
-            <Input
-               type='password'
-               label='Password'
-               id='password'
-               pass='true'
-               onChange={handleChange}
-               value={userInput.value}
-            />
-            <Input
-               type='password'
-               label='Confirm Password'
-               id='confirm'
-               pass='true'
-            />
-            <button className='signup__form-btn'>Sign up</button>
-         </form>
-         <div className='signup__alt'>
-            <span></span>
-            <p className='continue'>Or Continue with</p>
-            <span></span>
-         </div>
-         <div className='signup__options'>
-            <button className='option'>
-               <FcGoogle aria-hidden='true' />
-               Google
-            </button>
-            <button className='option'>
-               <BsApple aria-hidden='true' />
-               Apple
-            </button>
-         </div>
-         <div className='login__link'>
-            <p>Have an account?</p>
-            <Link to='/login'>Login</Link>
-         </div>
-      </div>
+      </>
    );
 }
 

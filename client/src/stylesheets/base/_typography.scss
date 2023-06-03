@@ -63,6 +63,7 @@ a {
 }
 .header {
    &__nav {
+      text-align: center;
       font-weight: var(--fw-medium);
    }
 }
@@ -225,7 +226,6 @@ a {
    text-align: center;
 }
 
-
 // -------- market page -------- //
 .market__heading {
    text-align: center;
@@ -238,7 +238,7 @@ a {
       color: hsl(var(--clr-blue));
       font-weight: var(--fw-bold);
    }
-   .item-price{
+   .item-price {
       font-weight: var(--fw-bold);
       color: hsl(var(--clr-accent));
    }
@@ -247,12 +247,10 @@ a {
       color: hsl(var(--clr-blue));
       font-weight: var(--fw-semi-bold);
    }
-
 }
 
-
 // -------- item detail page -------- //
-.item__name{
+.item__name {
    color: hsl(var(--clr-accent));
 }
 .item__desc {
@@ -271,12 +269,24 @@ a {
    }
 }
 
-
 // -------- about page -------- //
-.about{
-   .breifing{
+.about {
+   .breifing {
       font-size: var(--fs-400);
       line-height: 1.7;
+   }
+   &__title {
+      font-size: var(--fs-400);
+      color: hsl(var(--clr-accent));
+   }
+   &__headline {
+      font-size: var(--fs-600);
+      @include u.breakpoint(screen-md) {
+         font-size: var(--fs-700);
+      }
+      color: hsl(var(--clr-blue));
+      font-weight: var(--fw-extra-bold);
+      max-width: 30ch;
    }
 }
 
@@ -302,5 +312,21 @@ a {
          color: hsl(var(--clr-accent));
          text-decoration: underline;
       }
+   }
+}
+
+
+// -------- Modal -------- //
+
+.success {
+   &__heading{
+      font-size: var(--fs-600);
+   }
+   &__text {
+      font-size: var(--fs-400);
+   }
+   &__redirect {
+      font-size: var(--fs-400);
+      color: hsl(var(--clr-white));
    }
 }

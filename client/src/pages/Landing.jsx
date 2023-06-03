@@ -1,5 +1,5 @@
 import groceries from '../assets/groceries.svg';
-import delivery from '../assets/delivery.svg';
+import success from '../assets/success.svg';
 import turbine from '../assets/turbine.svg';
 import cart from '../assets/empty-cart.svg';
 import { useState, useEffect } from 'react';
@@ -135,7 +135,7 @@ function Landing() {
             {activeTab === 'third' && (
                <div role='tabpanel' className='features__details'>
                   <div className='feature-image'>
-                     <img src={delivery} className='image' />
+                     <img src={success} className='image' />
                   </div>
 
                   <article className='feature__desc'>
@@ -155,7 +155,7 @@ function Landing() {
             )}
          </section>
 
-         <section className='section'>
+         <section className='container'>
             <h1>Empowering Farm Owners for Success</h1>
             <div>
                <p>

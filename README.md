@@ -22,7 +22,6 @@ Users should be able to:
 
 - View the optimal layout for each of the website's pages depending on their device's screen size
 - See hover states for all interactive elements on the page
-- View each page and be able to toggle between the tabs to see new information
 
 ### Screenshot
 
@@ -30,7 +29,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [](https://your-live-site-url.com)
+- Live Site URL: [FarmVille](https://farmville-phi.vercel.app)
 
 ## My process
 
@@ -42,6 +41,7 @@ Users should be able to:
 - CSS Grid
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
+- [React-Router](https://reactrouter.com/)
 - [Sass](https://sass-lang.com/) - For styles
 
 ### What I learned
@@ -50,7 +50,7 @@ Users should be able to:
 
 ### Useful resources
 
-- [resource 1](https://www.example.com) - This helped me for XYZ reason. 
+- [resource 1](https://www.example.com) - This helped me for XYZ reason.
 - [resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ.
 
 ## Author

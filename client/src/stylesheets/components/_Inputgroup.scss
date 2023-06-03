@@ -63,6 +63,7 @@
    border: 0;
    position: absolute;
    max-width: fit-content;
+   padding-inline: 0.25rem;
    transform: translate(-50%, -50%);
    background-color: hsl(var(--clr-white));
    &:focus-visible .eye {
