@@ -4,6 +4,7 @@
    display: grid;
    gap: 5.5rem;
    padding-inline: var(--spacing);
+   padding-bottom: 5rem;
    &__stalls {
       display: grid;
       grid-template-columns: repeat(auto-fit, (minmax(16rem, 1fr)));
@@ -51,9 +52,10 @@
 .item-detail {
    display: grid;
    gap: var(--gap);
-   padding-block: var(--spacing);
+   padding-bottom: 4rem;
    @include u.breakpoint(screen-md) {
-      grid-template-columns: 0.9fr 1fr;
+      grid-template-columns: 1.1fr 1fr;
+      padding-block: 3rem;
    }
 
    &__image {
@@ -65,9 +67,9 @@
       flex-direction: column;
       gap: 1rem;
       background-color: hsl(var(--clr-secondary));
-      min-height: 30rem;
    }
    &__description {
+      padding-inline: var(--spacing);
       display: flex;
       flex-direction: column;
       gap: var(--gap);
@@ -113,11 +115,11 @@
       gap: 0.5rem;
    }
 }
-.item__price{
+.item__price {
    display: flex;
    justify-content: space-between;
 }
-.item-desc{
+.item-desc {
    margin-block: 1rem;
    line-height: 1.7;
 }
@@ -135,7 +137,7 @@
       transform: translateX(-0.35rem);
    }
 }
-.actions{
+.actions {
    display: grid;
    grid-template-columns: 1fr 1fr;
 }

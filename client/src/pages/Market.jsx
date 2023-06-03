@@ -45,6 +45,7 @@ function Market() {
             price={product.price}
             qty={product.quantity}
             store={product.storeId}
+            description={product.description}
          />
       ));
    }

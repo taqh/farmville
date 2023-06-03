@@ -239,7 +239,7 @@ a {
 
 .stall {
    .item-name {
-      font-size: var(--fs-400);
+      font-size: 1.25rem;
       color: hsl(var(--clr-blue));
       font-weight: var(--fw-bold);
    }
@@ -251,6 +251,11 @@ a {
       text-transform: uppercase;
       color: hsl(var(--clr-blue));
       font-weight: var(--fw-semi-bold);
+   }
+   &__details-desc {
+      font-size: var(--fs-400);
+      font-weight: var(--fw-medium);
+      color: hsl(var(--clr-dark));
    }
 }
 
