@@ -159,6 +159,9 @@ a {
       font-size: var(--fs-200);
       color: hsl(var(--clr-dark));
    }
+   &__options{
+      color: hsl(var(--clr-dark));
+   }
    &__link {
       font-size: var(--fs-200);
       font-weight: var(--fw-medium);

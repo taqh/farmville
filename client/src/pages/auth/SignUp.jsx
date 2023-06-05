@@ -53,7 +53,7 @@ function SignUp() {
 
       createAccount(userInput);
       setLoading(false);
-      openModal();
+      //openModal();
    };
    useEffect(() => {
       loginStatus ? navigate('/login') : null;

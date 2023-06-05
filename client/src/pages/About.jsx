@@ -81,14 +81,14 @@ function About() {
                   dedication but also the right tools and equipment. That&apos;s
                   why we collaborate with trusted companies to offer farmers the
                   support they need in accessing high-quality farming equipment.
-                  Whether it&apos;s advanced machinery, specialized tools, or
+               </p>
+                  <p>Whether it&apos;s advanced machinery, specialized tools, or
                   essential supplies, our platform connects farmers with
                   reliable suppliers who share our commitment to sustainable
                   agriculture. We strive to assist farmers in enhancing their
                   productivity, efficiency, and overall success by providing
                   access to the resources they require to cultivate their land
-                  and yield exceptional harvests.
-               </p>
+                  and yield exceptional harvests.</p>
             </div>
             <div className='about__image'>
                <img src={unboxing} alt='illustration' />

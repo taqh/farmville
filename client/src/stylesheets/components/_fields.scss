@@ -10,12 +10,12 @@
       padding-block: 0.75rem;
       border-radius: 0.3125em;
       padding-inline: 0.75rem 2.5rem;
-      border: 0.15625em solid hsl(var(--clr-gray));
+      border: 0.1rem solid hsl(var(--clr-gray));
       &::placeholder {
          color: transparent;
       }
       &:focus-visible {
-         border: hsl(var(--clr-accent)) 0.15625em solid;
+         border: hsl(var(--clr-accent)) 0.1rem solid;
       }
    }
    &__label {
@@ -31,9 +31,9 @@
 
 .input--error{
    .input__field {
-      border: 0.15625em solid hsl(var(--clr-red));
+      border: 0.1rem solid hsl(var(--clr-red));
       &:focus-visible {
-         border: hsl(var(--clr-accent)) 0.15625em solid;
+         border: hsl(var(--clr-accent)) 0.125rem solid;
       }
    }
    .input__label {
@@ -42,7 +42,7 @@
 }
 
 .input__field:placeholder-shown + .input__label {
-   top: 1rem;
+   top: 0.85rem;
    left: 1rem;
    padding: 0;
    transform: translateY(0);
