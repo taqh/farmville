@@ -40,7 +40,7 @@ function Landing() {
                </p>
                <div className='hero__action'>
                   <Link to='/register' className='action-btn'>Get Started</Link>
-                  <Link to='/explore' className='action-btn'>Explore market</Link>
+                  <Link to='/explore' className='action-btn'>Explore</Link>
                </div>
             </article>
             <div className='hero__illustration'>
