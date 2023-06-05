@@ -102,6 +102,7 @@ a {
          font-weight: var(--fw-semi-bold);
          letter-spacing: var(--ls-2);
          font-size: var(--fs-400);
+         text-align: center;
          &:first-of-type {
             color: hsl(var(--clr-white));
          }

@@ -39,8 +39,8 @@ function Landing() {
                   food ecosystem.
                </p>
                <div className='hero__action'>
-                  <button className='action-btn'>Get Started</button>
-                  <button className='action-btn'>Explore market</button>
+                  <Link to='/register' className='action-btn'>Get Started</Link>
+                  <Link to='/explore' className='action-btn'>Explore market</Link>
                </div>
             </article>
             <div className='hero__illustration'>

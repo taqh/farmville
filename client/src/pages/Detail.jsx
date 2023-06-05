@@ -13,7 +13,7 @@ function Detail() {
       setLoading(true);
       try {
          const response = await fetch(
-            `https://serverside-c96b.onrender.com/products?storeId=${params.stall}`
+            `https://serverside-c96b.onrender.com/products?farmId=${params.stall}`
          );
          const resData = await response.json();
          if (response.ok) {
@@ -50,7 +50,7 @@ function Detail() {
                <div className='item-detail'>
                   <div className='item-detail__image'>
                      <img
-                        src='https://images.unsplash.com/photo-1559740509-29a16cfbb278?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=813&q=80'
+                        src={info.imageUrl}
                         alt='product image'
                         className='product__image'
                      />
@@ -60,14 +60,14 @@ function Detail() {
                      <h1 className='item__name'>{info.name}</h1>
 
                      <div className='item__price'>
-                        <span className='product-name'>Basket</span>
+                        <span className='product-name'>Available</span>
                         <span>${info.price}</span>
                      </div>
 
                      <div className='farm-details'>
                         <div className='farm-details--name'>
                            <GiBarn size='25' aria-hidden='true' />
-                           <span>{info.storeName}</span>
+                           <span>{info.farmName}</span>
                         </div>
                         <button className='farm-details--location'>
                            <Location aria-hidden='true' />

@@ -142,10 +142,13 @@
    grid-template-columns: 1fr 1fr;
 }
 .loading {
-   gap: 10rem;
+   gap: 7.5rem;
    display: flex;
    position: relative;
    align-items: center;
    flex-direction: column;
    justify-content: center;
+   margin: auto;
+   width: fit-content;
+   height: 80%;
 }
