@@ -8,10 +8,10 @@
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
+  - [Knowledge Gained](#knowledge-gained)
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
-- [Author](#author)
+- [Authors](#authors)
 - [Acknowledgments](#acknowledgments)
 
 ## Overview
@@ -43,19 +43,28 @@ Users should be able to:
 - [React](https://reactjs.org/) - JS library
 - [React-Router](https://reactrouter.com/)
 - [Sass](https://sass-lang.com/) - For styles
+- [Nodejs](https://nodejs.org/) - JS runtime environment
+- [Expressjs](https://expressjs.com/) - Node.js framework
+- [MongoDB](https://www.mongodb.com/docs/) - Database
 
-### What I learned
+### Knowledge gained
 
 ### Continued development
 
 ### Useful resources
 
-- [resource 1](https://www.example.com) - This helped me for XYZ reason.
-- [resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ.
+- [MDN web docs](https://developer.mozilla.org/) - MDN is a great resource for learning javascript features and it helped us out alot during the development process
 
-## Author
+## Authors
 
-- Website - [null]()
-- Twitter - [null]()
+This project was built by a team of two developers ecach with roles uniquely assigned to them.
+
+- Taqib Ibrahim @Dom-iha - Geoscience student and the team's Frontend engineer.
+
+- Godwin Adah @AdahGodwin - Computer Science student and the team's Backend engineer.
 
 ## Acknowledgments
+
+## License
+
+MIT License
