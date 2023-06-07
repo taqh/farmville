@@ -42,10 +42,10 @@ function Detail() {
             </div>
          ) : (
             <div className='container product-details'>
-               <button onClick={() => navigate('/market')} className='back-btn'>
+               <Link  to={'..'} relative='path' className='back-btn'>
                   <Arrow aria-hidden='true' />
                   <span>back to market</span>
-               </button>
+               </Link>
 
                <div className='item-detail'>
                   <div className='item-detail__image'>

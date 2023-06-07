@@ -10,7 +10,7 @@ function Product(props) {
    function truncateString(str, maxLength) {
       return str.length > maxLength ? str.substring(0, maxLength) + '...' : str;
    }
-   const truncatedDescription = truncateString(props.description, 26);
+   const truncatedDescription = truncateString(props.description, 35);
 
    return (
       <div className='stall'>

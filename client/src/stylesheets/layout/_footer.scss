@@ -2,9 +2,9 @@
 
 footer {
    background: hsl(var(--clr-blue));
-   padding: var(--spacing);
+   padding: 2rem;
    @include u.breakpoint(screen-sm) {
-      padding-block: 4rem;
+      padding-block: 5rem;
    }
 }
 
