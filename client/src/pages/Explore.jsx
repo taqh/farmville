@@ -85,6 +85,22 @@ function Explore() {
                      </Link>
                   </div>
                </div>
+               <div className='category'>
+                  <div className='detail'>
+                     <span>Fishery</span>
+                     <Link to='/market' className='category__btn'>
+                        Shop now
+                     </Link>
+                  </div>
+               </div>
+               <div className='category'>
+                  <div className='detail'>
+                     <span>Livestock</span>
+                     <Link to='/market' className='category__btn'>
+                        Shop now
+                     </Link>
+                  </div>
+               </div>
             </div>
          </section>
 
