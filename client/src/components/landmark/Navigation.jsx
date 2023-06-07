@@ -22,11 +22,11 @@ function Navigation() {
             <div className='header'>
                {loginStatus ? (
                   <Link to='/explore' className='logo'>
-                     farmville
+                     Farmville
                   </Link>
                ) : (
                   <Link to='/' className='logo'>
-                     farmville
+                     Farmville
                   </Link>
                )}
                <span className='blur' aria-hidden='true'></span>

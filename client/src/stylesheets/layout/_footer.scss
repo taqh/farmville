@@ -37,6 +37,7 @@ footer {
    gap: var(--gap);
    padding: 0;
    fill: hsl(var(--clr-white));
+   height: fit-content;
    @include u.breakpoint-down(screen-sm) {
       grid-column: 2;
       grid-row: 2;

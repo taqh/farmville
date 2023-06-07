@@ -12,14 +12,31 @@ function SignUp() {
    const { openModal, closeModal } = useContext(ModalContext);
    const [loading, setLoading] = useState(false);
    const [isValid, setIsValid] = useState(true);
-
    const navigate = useNavigate();
    const [userInput, setUserInput] = useState({
       email: '',
-      pasword: '',
+      password: '',
       lastname: '',
       firstname: '',
    });
+
+   const signup = async () => {
+      try {
+         const response = await fetch(
+            'https://serverside-c96b.onrender.com/users/signup',
+            {
+               method: 'POST',
+               body: JSON.stringify(userInput),
+            }
+         );
+         const status = await response.json();
+         // if (status.ok) {
+         //    console.log(status);
+         // }
+      } catch (error) {
+         console.error('Error:', error);
+      }
+   };
 
    const handleChange = (e) => {
       const { name, value } = e.target;
@@ -42,13 +59,14 @@ function SignUp() {
       } else {
          setUserInput((prevState) => ({
             ...prevState,
-            pasword: e.target.value,
+            password: value,
          }));
       }
    };
 
    const handleSignup = (e) => {
       e.preventDefault();
+      signup();
       setLoading(true);
 
       createAccount(userInput);
@@ -89,18 +107,18 @@ function SignUp() {
                   type='email'
                   label='Email'
                   id='email'
+                  isValid={isValid}
                   onChange={handleChange}
                   value={userInput.email}
-                  isValid={isValid}
                />
                <Input
                   type='password'
                   label='Password'
                   id='password'
                   pass='true'
-                  onChange={handleChange}
-                  value={userInput.value}
                   isValid={isValid}
+                  onChange={handleChange}
+                  value={userInput.password}
                />
                <Input
                   type='password'

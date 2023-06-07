@@ -71,7 +71,7 @@ function Detail() {
                         </div>
                         <button className='farm-details--location'>
                            <Location aria-hidden='true' />
-                           <span>visit farm</span>
+                           <span>Visit farm</span>
                         </button>
                      </div>
 

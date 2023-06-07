@@ -50,7 +50,7 @@ function Landing() {
 
          <section className='features'>
             <div className='features__header'>
-               <h2>Services</h2>
+               <h2>Feature</h2>
                <p>
                   Our aim is to make it quick and easy for farmers to access
                   companies looking to invest and provide them with the tools to

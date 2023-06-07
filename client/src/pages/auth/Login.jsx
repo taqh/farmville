@@ -27,7 +27,7 @@ function Login() {
       } else {
          setUserInput((prevState) => ({
             ...prevState,
-            pasword: e.target.value,
+            pasword: value,
          }));
       }
    };
@@ -35,7 +35,7 @@ function Login() {
    const handleLogin = (e) => {
       e.preventDefault();
       setLoading(true);
-
+  
       accessAccount(userInput);
       setLoading(false);
    };
@@ -54,16 +54,18 @@ function Login() {
                type='email'
                label='Email'
                id='email'
-               onChange={handleChange}
                isValid={isValid}
+               onChange={handleChange}
+               value={userInput.email}
             />
             <Input
                type='password'
                label='Password'
                id='password'
                pass='true'
-               onChange={handleChange}
                isValid={isValid}
+               onChange={handleChange}
+               value={userInput.pasword}
             />
             <button className='login__form-btn' disabled={loading}>
                {loading ? 'logging you in' : 'Log in'}
