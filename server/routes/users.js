@@ -70,21 +70,13 @@ router.post('/login', cors.corsWithOptions, (req, res, next) => {
             err: info
           });
         }
-        req.logIn(user, function(err) {
-          if (err) {
-            return res.status(500).json({
-              err: 'Could not log in user'
-            });
-          }
-            
-          var token = authenticate.getToken({_id: req.user._id});
+        var token = authenticate.getToken({_id: user._id});
             res.status(200).json({
             status: 'Login successful!',
             success: true,
             token: token,
             userId: user._id
           });
-        });
       })(req,res,next);
     });
   

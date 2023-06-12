@@ -6,8 +6,8 @@ const whitelist = [
     'http://localhost:4200',
     'http://localhost:5174',
     'http://localhost:5173',
-    'https://cypherstore.netlify.app',
-    'https://groffy-store.netlify.app',];
+    "https://farmville-red.vercel.app",
+];
 
 var corsOptionsDelegate = (req, callback) => {
     var corsOptions;
