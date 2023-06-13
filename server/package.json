@@ -12,7 +12,7 @@
     "cors": "^2.8.5",
     "debug": "~2.6.9",
     "express": "^4.18.2",
-    "flutterwave-node-v3": "^1.0.9",
+    "flutterwave-node-v3": "^1.0.0",
     "http-errors": "~1.6.3",
     "install": "^0.13.0",
     "jade": "^0.29.0",

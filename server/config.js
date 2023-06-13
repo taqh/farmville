@@ -1,5 +1,3 @@
-
-
 module.exports = {
     "secretKey": process.env.secretKey,
     "mongoUrl": process.env.mongoUrl
