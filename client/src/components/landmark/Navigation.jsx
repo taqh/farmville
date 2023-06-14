@@ -2,8 +2,8 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import UserContext from '../../context/UserContext';
 import { useContext, useState } from 'react';
 import NavToggle from './NavToggle';
-import basket from '../../assets/basket.svg';
-//
+// import basket from '../../assets/basket.svg';
+import logo from '/logo.jpg'
 import { GiBasket, GiFruitBowl } from 'react-icons/gi';
 
 function Navigation() {
@@ -22,11 +22,11 @@ function Navigation() {
             <div className='header'>
                {loginStatus ? (
                   <Link to='/explore' className='logo'>
-                     Farmville
+                     <img src={logo}/>
                   </Link>
                ) : (
                   <Link to='/' className='logo'>
-                     Farmville
+                     <img src={logo}/>
                   </Link>
                )}
                <span className='blur' aria-hidden='true'></span>

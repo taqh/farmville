@@ -159,7 +159,7 @@ a {
       font-size: var(--fs-200);
       color: hsl(var(--clr-dark));
    }
-   &__options{
+   &__options {
       color: hsl(var(--clr-dark));
    }
    &__link {
@@ -189,29 +189,48 @@ a {
       font-weight: var(--fw-regular);
       color: hsl(var(--clr-dark));
    }
+   &__text{
+      color: hsl(var(--clr-red));
+      font-size: var(--fs-200);
+      font-weight: var(--fw-medium);
+   }
 }
-.input--error{
+.input--invalid {
    .input__label {
       color: hsl(var(--clr-red));
    }
 }
 
 // -------- explore page -------- //
-.explore__heading {
-   color: hsl(var(--clr-white));
-   font-size: var(--fs-800);
-   text-align: center;
-   max-width: 35ch;
-}
-.explore__btn {
-   color: hsl(var(--clr-white));
-}
-.categories {
-   h2 {
+.explore {
+   &__heading {
+      color: hsl(var(--clr-white));
+      text-align: center;
+      max-width: 35ch;
+      @include u.breakpoint(screen-md) {
+         font-size: var(--fs-800);
+      }
+   }
+   &__btn {
+      color: hsl(var(--clr-white));
+      &:hover {
+         color: hsl(var(--clr-accent));
+      }
+   }
+   &__intro {
       font-size: var(--fs-700);
+      text-transform: uppercase;
+      max-width: 30ch;
       text-align: center;
    }
+   &__categories {
+      h2 {
+         font-size: var(--fs-700);
+         text-align: center;
+      }
+   }
 }
+
 .detail {
    color: hsl(var(--clr-white));
    font-weight: var(--fw-bold);
@@ -227,12 +246,6 @@ a {
          color: hsl(var(--clr-red));
       }
    }
-}
-.intro__text {
-   font-size: var(--fs-700);
-   text-transform: uppercase;
-   max-width: 30ch;
-   text-align: center;
 }
 
 // -------- market page -------- //
@@ -329,11 +342,10 @@ a {
    }
 }
 
-
 // -------- Modal -------- //
 
 .success {
-   &__heading{
+   &__heading {
       font-size: var(--fs-600);
    }
    &__text {

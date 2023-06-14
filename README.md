@@ -1,5 +1,6 @@
 # Farmville
 
+![](./client/public/logo.jpg)
 ## Table of contents
 
 - [Overview](#overview)
