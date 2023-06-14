@@ -3,14 +3,10 @@ import { Link, useNavigate } from 'react-router-dom';
 function Product(props) {
    const navigate = useNavigate();
 
-   const addProduct = () => {
-      console.log(props.description.length);
-   };
-
-   function truncateString(str, maxLength) {
+   const truncate = (str, maxLength) => {
       return str.length > maxLength ? str.substring(0, maxLength) + '...' : str;
    }
-   const truncatedDescription = truncateString(props.description, 35);
+   const truncatedDescription = truncate(props.description, 35);
 
    return (
       <div className='stall'>
@@ -26,7 +22,7 @@ function Product(props) {
             </div>
             <p className='stall__details-desc'>{truncatedDescription}</p>
          </Link>
-         <button className='stall__btn' onClick={addProduct}>
+         <button className='stall__btn'>
             add to basket
          </button>
       </div>

@@ -3,8 +3,13 @@
 .input {
    position: relative;
    margin-bottom: var(--spacing);
-
+   &__text{
+      margin-left: auto;
+      display: flex;
+      justify-content: end;
+   }
    &__field {
+      grid-area: field;
       width: 100%;
       outline: transparent;
       padding-block: 0.75rem;
@@ -18,6 +23,12 @@
          border: hsl(var(--clr-accent)) 0.1rem solid;
       }
    }
+   &__field:placeholder-shown + .input__label {
+      top: 0.85rem;
+      left: 1rem;
+      padding: 0;
+      transform: translateY(0);
+   }
    &__label {
       top: 0.85rem;
       left: 0.75rem;
@@ -29,24 +40,15 @@
    }
 }
 
-.input--error{
+.input--invalid{
    .input__field {
       border: 0.1rem solid hsl(var(--clr-red));
       &:focus-visible {
-         border: hsl(var(--clr-accent)) 0.125rem solid;
+         border: hsl(var(--clr-red)) 0.1rem solid;
       }
-   }
-   .input__label {
-      color: hsl(var(--clr-red));
    }
 }
 
-.input__field:placeholder-shown + .input__label {
-   top: 0.85rem;
-   left: 1rem;
-   padding: 0;
-   transform: translateY(0);
-}
 
 .login,
 .signup {
@@ -65,9 +67,6 @@
 }
 .eye {
    fill: hsl(var(--clr-dark));
-   &:hover {
-      fill: hsl(var(--clr-accent));
-   }
 }
 .pass-btn {
    right: 0;

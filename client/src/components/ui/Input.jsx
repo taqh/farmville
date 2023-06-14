@@ -10,6 +10,7 @@ const InputGroup = ({
    value,
    onBlur,
    isValid,
+   errorMessage,
 }) => {
    const [showPassword, setShowPassword] = useState(false);
    if (pass) {
@@ -17,36 +18,39 @@ const InputGroup = ({
    }
 
    return (
-      <div className={`input ${!isValid && 'input--error'}`}>
-         <input
-            id={id}
-            name={id}
-            type={type}
-            value={value}
-            onBlur={onBlur}
-            placeholder={label}
-            onChange={onChange}
-            autoComplete='off'
-            className='input__field'
-         />
-         <label htmlFor={id} className='input__label'>
-            {label}
-         </label>
-         {pass && (
-            <button
-               onClick={() => setShowPassword(!showPassword)}
-               type='button'
-               className='pass-btn'
-            >
-               <span className='sr-only'>make password visibile</span>
-               {showPassword ? (
-                  <FaEyeSlash className='eye' />
-               ) : (
-                  <FaEye className='eye' />
-               )}
-            </button>
-         )}
-      </div>
+      <>
+         {!isValid && <p className='input__text'>{errorMessage}</p>}
+         <div className={`input ${!isValid ? 'input--invalid' : ''}`}>
+            <input
+               id={id}
+               name={id}
+               type={type}
+               value={value}
+               onBlur={onBlur}
+               placeholder={label}
+               onChange={onChange}
+               autoComplete='off'
+               className='input__field'
+            />
+            <label htmlFor={id} className='input__label'>
+               {label}
+            </label>
+            {pass && (
+               <button
+                  onClick={() => setShowPassword(!showPassword)}
+                  type='button'
+                  className='pass-btn'
+               >
+                  <span className='sr-only'>make password visibile</span>
+                  {showPassword ? (
+                     <FaEyeSlash className='eye' />
+                  ) : (
+                     <FaEye className='eye' />
+                  )}
+               </button>
+            )}
+         </div>
+      </>
    );
 };
 

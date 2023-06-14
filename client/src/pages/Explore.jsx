@@ -14,7 +14,7 @@ function Explore() {
             </Link>
          </section>
 
-         <div className='container intro__text'>
+         <div className='container explore__intro'>
             <p>
                here to provide{' '}
                <span className='color-effect'>high-quality</span> farm produce,
@@ -26,8 +26,8 @@ function Explore() {
             </p>
          </div>
 
-         <section className='categories'>
-            <h2>Nourishing Variety</h2>
+         <section className='explore__categories'>
+            <h2>Variety</h2>
             <div className='categories__list'>
                <div className='category'>
                   <div className='detail'>
@@ -104,7 +104,7 @@ function Explore() {
             </div>
          </section>
 
-         <div className='products__showcase'>
+         <div className='container explore__farms'>
             <div></div>
             <div></div>
             <div></div>
