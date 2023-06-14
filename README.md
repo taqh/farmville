@@ -23,6 +23,9 @@ Users should be able to:
 
 - View the optimal layout for each of the website's pages depending on their device's screen size
 - See hover states for all interactive elements on the page
+- sign up and login to the website
+- create a farm
+- browse through available products and add them to cart
 
 ### Screenshot
 
@@ -60,9 +63,9 @@ Users should be able to:
 
 This project was built by a team of two developers ecach with roles uniquely assigned to them.
 
-- Taqib Ibrahim @Dom-iha - Geoscience student and the team's Frontend engineer.
+- Taqib Ibrahim [@Dom-iha](https://github.com/Dom-iha) - Geoscience student and the team's Frontend engineer.
 
-- Godwin Adah @AdahGodwin - Computer Science student and the team's Backend engineer.
+- Godwin Adah [@Godwin](https://github.com/AdahGodwin)  - Computer Science student and the team's Backend engineer.
 
 ## Acknowledgments
 

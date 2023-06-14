@@ -140,8 +140,8 @@ function SignUp() {
       }
 
       if (
-         (emailTouched && userInput.email.trim() === '') ||
-         !userInput.email.includes('@')
+         (emailTouched && userInput.email.trim() === ''   &&
+         !userInput.email.includes('@')) 
       ) {
          setEmailIsValid(false);
       } else {
