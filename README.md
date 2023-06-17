@@ -1,6 +1,6 @@
 # Farmville
 
-![](./client/public/logo.jpg)
+![](./client/public/logo.png)
 ## Table of contents
 
 - [Overview](#overview)
@@ -33,7 +33,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [FarmVille](https://farmville-phi.vercel.app)
+- Live Site: [FarmVille](https://farmville-red.vercel.app)
 
 ## My process
 

@@ -5,15 +5,22 @@ import { FcGoogle } from 'react-icons/fc';
 import { BsApple } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import { Spinner } from '../../components/loaders/Loader';
 
 function Login() {
    const { accessAccount, userData } = useContext(UserContext);
    const [loading, setLoading] = useState(false);
-   const [isValid, seIsValid] = useState(true);
+   const [success, setSuccess] = useState(false);
+   const [formIsValid, setFormIsValid] = useState(false);
+   const [emailIsValid, setEmailIsValid] = useState(true);
+   const [emailTouched, setEmailTouched] = useState(false);
+   const [passwordIsValid, setPasswordIsValid] = useState(true);
+   const [passwordTouched, setPasswordTouched] = useState(false);
+
    const navigate = useNavigate();
    const [userInput, setUserInput] = useState({
       email: '',
-      pasword: '',
+      password: '',
    });
 
    const handleChange = (e) => {
@@ -27,18 +34,80 @@ function Login() {
       } else {
          setUserInput((prevState) => ({
             ...prevState,
-            pasword: value,
+            password: value,
          }));
+      }
+   };
+   const emailBlurHandler = () => {
+      setEmailTouched(true);
+   };
+   const passwordBlurHandler = () => {
+      setPasswordTouched(true);
+   };
+   useEffect(() => {
+      if (passwordIsValid && emailIsValid) {
+         setFormIsValid(true);
+      }
+      return () => {};
+   }, [emailIsValid, passwordIsValid]);
+
+   useEffect(() => {
+      if (
+         emailTouched &&
+         userInput.email.trim() === '' &&
+         !userInput.email.includes('@')
+      ) {
+         setEmailIsValid(false);
+      } else {
+         setEmailIsValid(true);
+         setEmailTouched(false);
+      }
+
+      if (passwordTouched && userInput.password.trim() === '') {
+         setPasswordIsValid(false);
+      } else {
+         setPasswordIsValid(true);
+         setPasswordTouched(false);
+      }
+
+      return () => {};
+   }, [emailTouched, userInput.email, passwordTouched, userInput.password]);
+
+   const login = async () => {
+      try {
+         const response = await fetch(
+            'https://serverside-c96b.onrender.com/users/login',
+            {
+               method: 'POST',
+               headers: {
+                  'Content-Type': 'application/json',
+               },
+               body: JSON.stringify(userInput),
+            }
+         );
+         const data = await response.json();
+         if (response.ok) {
+            console.log(data);
+            setSuccess(true);
+         }
+      } catch (error) {
+         console.error('Error:', error);
       }
    };
 
    const handleLogin = (e) => {
       e.preventDefault();
-      setLoading(true);
-  
-      accessAccount(userInput);
-      setLoading(false);
+
+      if (formIsValid) {
+         setLoading(true);
+         login();
+      }
+      if (success) {
+         accessAccount(userInput);
+         setLoading(false);
+      }
    };
+
    useEffect(() => {
       userData.loginStatus ? navigate('/explore') : null;
    }, [navigate, userData.loginStatus]);
@@ -54,21 +123,26 @@ function Login() {
                type='email'
                label='Email'
                id='email'
-               isValid={isValid}
+               isValid={emailIsValid}
                onChange={handleChange}
                value={userInput.email}
+               onBlur={emailBlurHandler}
+               errorMessage={!emailIsValid ? 'Please enter a valid email' : ''}
             />
             <Input
                type='password'
                label='Password'
                id='password'
                pass='true'
-               isValid={isValid}
+               isValid={passwordIsValid}
                onChange={handleChange}
-               value={userInput.pasword}
+               value={userInput.password}
+               onBlur={passwordBlurHandler}
+               errorMessage={!passwordIsValid ? 'Required' : ''}
             />
             <button className='login__form-btn' disabled={loading}>
-               {loading ? 'logging you in' : 'Log in'}
+               {loading && <Spinner />}
+               {loading ? 'logging in' : 'Log in'}
             </button>
          </form>
          <div className='login__alt'>

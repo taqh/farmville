@@ -3,7 +3,7 @@ import UserContext from '../../context/UserContext';
 import { useContext, useState } from 'react';
 import NavToggle from './NavToggle';
 // import basket from '../../assets/basket.svg';
-import logo from '/logo.jpg'
+import logo from '/logo.png'
 import { GiBasket, GiFruitBowl } from 'react-icons/gi';
 
 function Navigation() {
