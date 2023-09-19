@@ -1,6 +1,7 @@
 # Farmville
 
-![](./client/public/logo.png)
+![A leaf](./client/public/logo.png)
+
 ## Table of contents
 
 - [Overview](#overview)
@@ -29,7 +30,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![A screenshot of the site ](./screenshot.jpg)
 
 ### Links
 

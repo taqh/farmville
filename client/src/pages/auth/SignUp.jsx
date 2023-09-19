@@ -23,8 +23,8 @@ function SignUp() {
 
    const [firstNameTouched, setFirstNameTouched] = useState(false);
    const [lastNameTouched, setLastNameTouched] = useState(false);
-   const [emailTouched, setEmailTouched] = useState(false);
    const [passwordTouched, setPasswordTouched] = useState(false);
+   const [emailTouched, setEmailTouched] = useState(false);
 
    const [formIsValid, setFormIsValid] = useState(false);
    const [userInput, setUserInput] = useState({
@@ -50,6 +50,8 @@ function SignUp() {
          if (response.ok) {
             console.log(data);
             setSuccess(true);
+            openModal();
+            createAccount(userInput);
          }
       } catch (error) {
          console.error('Error:', error);
@@ -103,8 +105,9 @@ function SignUp() {
    const [confirmValue, setConfirmValue] = useState('');
 
    const checkMatch = (e) => {
-      setConfirmValue(e.target.value);
-      if (confirmValue === userInput.password) {
+      const value = e.target.value
+      setConfirmValue(value);
+      if (value === userInput.password) {
          setPasswordMatch(true);
       } else {
          setPasswordMatch(false);
@@ -166,18 +169,23 @@ function SignUp() {
       userInput.password,
    ]);
 
-   const handleSignup = (e) => {
+   // fix loigc
+   const handleSignup = async (e) => {
       e.preventDefault();
       if (formIsValid) {
-         signup();
          setLoading(true);
-      }
-      if (success) {
-         openModal();
-         setLoading(false);
-         createAccount(userInput);
+   
+         try {
+            await signup();
+            setLoading(false); // Set loading to false after signup attempt
+            
+         } catch (error) {
+            setLoading(false); // Set loading to false if there was an error
+            console.error('Error during signup:', error);
+         }
       }
    };
+   
 
    return (
       <>

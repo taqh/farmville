@@ -1,18 +1,14 @@
-import ModalContext from '../../context/ModalContext';
 import { createPortal } from 'react-dom';
 import { useContext } from 'react';
+import ModalContext from '../../context/ModalContext';
 
-const Dialog = ({ children }) => {
+const Modal = ({ children }) => {
    const { modalRef } = useContext(ModalContext);
-   return (
-      <dialog ref={modalRef}>
-         {children}
-      </dialog>
+   return createPortal(
+      <dialog ref={modalRef}>{children}</dialog>,
+      document.getElementById('portal')
    );
 };
 
-function Modal() {
-   return <>{createPortal(<Dialog />, document.getElementById('portal'))}</>;
-}
-
 export default Modal;
+

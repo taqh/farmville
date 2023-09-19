@@ -1,4 +1,4 @@
-dialog{
+dialog {
    inset: 0;
    border: 0;
    z-index: 100;
@@ -9,21 +9,19 @@ dialog{
    border-radius: 0.35rem;
    flex-direction: column;
    justify-content: center;
-   // background: transparent;
    animation: slide-in 400ms forwards;
 }
-dialog::backdrop{
-   background: hsl(0 0% 0% / .7);
+dialog::backdrop {
+   background: hsl(0 0% 0% / 0.7);
    opacity: 0;
 }
-dialog[open]::backdrop{
-   animation: fade-in 400ms forwards; 
+dialog[open]::backdrop {
+   animation: fade-in 350ms forwards;
 }
-dialog[open]{
-   animation: slide-in 400ms forwards;
+dialog[open] {
+   animation: slide-in 350ms forwards;
    display: flex;
 }
-
 
 // -------- success modal -------- //
 .success {
@@ -31,13 +29,12 @@ dialog[open]{
    flex-direction: column;
    gap: 0.75rem;
    padding: var(--spacing);
-   // background-color: hsl(var(--clr-white));
+   // background-color: hsl(var(--clr-accent));
    &__heading {
       color: hsl(var(--clr-blue));
    }
    &__text {
-      // margin-top: 1rem;
-      margin-bottom: 2rem;
+      // margin-bottom: 1rem;
    }
    &__redirect {
       border-radius: 0.35rem;
