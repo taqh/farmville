@@ -9,6 +9,12 @@ header {
       z-index: 10;
    }
 }
+.basket-btn{
+   display: flex;
+   gap: 0.5rem;
+   justify-content: center;
+   align-items: center;
+}
 .logo {
    img{
       width: 2.75rem;

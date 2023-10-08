@@ -2,13 +2,13 @@
 
 .market {
    display: grid;
-   gap: 5.5rem;
+   gap: 2rem;
    padding-inline: var(--spacing);
    padding-bottom: 5rem;
    &__stalls {
       display: grid;
       grid-template-columns: repeat(auto-fit, (minmax(20rem, 1fr)));
-      column-gap: var(--gap);
+      column-gap: 4rem;
       row-gap: 3.5rem;
    }
 }
@@ -17,12 +17,18 @@
    flex-direction: column;
    gap: var(--gap);
    &__image {
-      min-width: 250px;
-      min-height: 300px;
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
       aspect-ratio: 1/1;
-      // display: flex;
-      // place-items: center;
       background-color: hsl(var(--clr-secondary));
+      border-top-right-radius: 0.625rem;
+      border-top-left-radius: 0.625rem;
+      transition: 300ms ease;
+   }
+   &__details:hover > &__image {
+      scale: 1.01;
+      transition: 300ms ease;
    }
    &__details {
       display: flex;
@@ -58,16 +64,16 @@
       grid-template-columns: 1.1fr 1fr;
       padding-block: 3rem;
    }
-
+   .product__image {
+      width: 100%;
+      max-height: 450px;
+      object-fit: cover;
+      aspect-ratio: 1/1;
+      background-color: hsl(var(--clr-secondary));
+      border-radius: 0.625rem;
+   }
    &__image {
       background-color: hsl(var(--clr-secondary));
-
-      // was supposed to be a carousel
-      display: flex;
-      @include u.breakpoint-down(screen-md) {
-         flex-direction: row;
-         overflow-x: hidden;
-      }
    }
    &__description {
       padding-inline: var(--spacing);
@@ -131,9 +137,8 @@
    transition: 250ms ease-out;
    gap: 0.5rem;
    width: fit-content;
-   svg {
-      transform: rotate(90deg);
-   }
+   padding: 0.5rem;
+  
    &:hover {
       transform: translateX(-0.35rem);
    }
@@ -152,4 +157,29 @@
    margin: auto;
    width: fit-content;
    height: 80%;
+}
+.filter{
+   display: flex;
+   align-items: center;
+   gap: 0.75rem;
+   flex-wrap: wrap;
+   &__heading{
+      font-size: var(--fs-400);
+      font-weight: var(--fw-medium);
+      margin-bottom: 0.5em;
+   }
+   &__btn{
+      padding: 0.45em 0.75em;
+      border-radius: 0.3125rem;
+      background-color: hsl(var(--clr-white));
+      border: 0.1rem solid hsl(var(--clr-accent));
+      transition: color, background 300ms ease;
+      &:hover {
+         background-color: hsl(var(--clr-secondary));
+      }
+
+      &--active{
+         background-color: hsl(var(--clr-secondary));
+      }
+   }
 }

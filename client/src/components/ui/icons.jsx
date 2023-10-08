@@ -46,3 +46,14 @@ export const Arrow = () => {
       </svg>
    );
 };
+export const Back = () => {
+   return (
+      <svg strokeWidth="2" stroke="currentColor" viewBox="0 0 24 24" fill="" width='20' height='20' xmlns="http://www.w3.org/2000/svg">
+         <path 
+            d="M10 19l-7-7m0 0l7-7m-7 7h18" 
+            strokeLinejoin="round" 
+            strokeLinecap="round"></path>
+      </svg>
+   );
+};
+

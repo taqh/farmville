@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import { Spinner } from '../../components/loaders/Loader';
 
 function Login() {
-   const { accessAccount, userData } = useContext(UserContext);
+   const { accessAccount } = useContext(UserContext);
    const [loading, setLoading] = useState(false);
    const [success, setSuccess] = useState(false);
    const [formIsValid, setFormIsValid] = useState(false);
@@ -95,22 +95,29 @@ function Login() {
       }
    };
 
-   const handleLogin = (e) => {
+   const handleLogin  = async (e) => {
       e.preventDefault();
 
       if (formIsValid) {
          setLoading(true);
-         login();
-      }
-      if (success) {
-         accessAccount(userInput);
-         setLoading(false);
-      }
+         try {
+            await login();
+            setLoading(false); 
+         } catch (error) {
+            setLoading(false); 
+            console.error('Error during login:', error);
+         }
+      }  
+      
    };
 
    useEffect(() => {
-      userData.loginStatus ? navigate('/explore') : null;
-   }, [navigate, userData.loginStatus]);
+      if (success) {
+         accessAccount(userInput);
+         setLoading(false);
+         navigate('/explore');
+      }
+   }, [navigate, success, accessAccount, userInput]);
 
    return (
       <div className='login'>

@@ -1,10 +1,9 @@
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import UserContext from '../../context/UserContext';
 import { useContext, useState } from 'react';
 import NavToggle from './NavToggle';
-// import basket from '../../assets/basket.svg';
 import logo from '/logo.png'
-import { GiBasket, GiFruitBowl } from 'react-icons/gi';
+import { GiFruitBowl } from 'react-icons/gi';
 
 function Navigation() {
    const [showMenu, setShowMenu] = useState(false);
@@ -12,7 +11,7 @@ function Navigation() {
    const location = useLocation();
    const isLoggingIn = location.pathname.substring(1) === 'login';
    const { loginStatus } = userData;
-
+   const navigate = useNavigate();
    return (
       <>
          <a className='skip-to-content' href='#main'>
@@ -29,6 +28,7 @@ function Navigation() {
                      <img src={logo}/>
                   </Link>
                )}
+               
                <span className='blur' aria-hidden='true'></span>
                <nav>
                   <NavToggle
@@ -41,6 +41,7 @@ function Navigation() {
                      id='primary-navigation'
                   >
                      {loginStatus && (
+                        <>
                         <li>
                            <NavLink
                               to='/market'
@@ -53,6 +54,20 @@ function Navigation() {
                               Market
                            </NavLink>
                         </li>
+                        <li>
+                           <NavLink
+                              to='/account'
+                              className={({ isActive }) =>
+                                 isActive ? 'link--active' : 'link'
+                              }
+                              end
+                              onClick={() => setShowMenu(!showMenu)}
+                           >
+                              Account
+                           </NavLink>
+                        </li>
+                        
+                        </>
                      )}
                      {!loginStatus && (
                         <>
@@ -99,9 +114,10 @@ function Navigation() {
                         </>
                      )}
                      {loginStatus && (
-                        <button className='basket-btn'>
+                        <button className='basket-btn' onClick={() => navigate('/basket')}>
                            <span className='sr-only'>View cart</span>
                            <GiFruitBowl size='24' aria-hidden='true' />
+                           Basket
                         </button>
                      )}
                   </ul>

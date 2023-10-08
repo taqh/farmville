@@ -290,7 +290,7 @@ a {
 .back-btn {
    color: hsl(var(--clr-blue));
    font-weight: var(--fw-semi-bold);
-   text-transform: uppercase;
+   text-transform: capitalize;
    &:hover {
       color: hsl(var(--clr-accent));
    }

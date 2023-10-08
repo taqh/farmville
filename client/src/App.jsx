@@ -13,6 +13,8 @@ import Login from './pages/auth/Login';
 import SignUp from './pages/auth/SignUp';
 import UserProvider from './context/UserProvider';
 import ModalProvider from './context/ModalProvider';
+import Basket from './pages/Basket';
+import Account from './pages/Account';
 
 const router = createBrowserRouter([
    {
@@ -29,6 +31,8 @@ const router = createBrowserRouter([
          { path: '/services', element: <Service /> },
          { path: '/market', element: <Market /> },
          { path: '/market/:stall', element: <Details /> },
+         { path: '/basket', element: <Basket /> },
+         { path: '/account', element: <Account /> },
       ],
    },
 ]);

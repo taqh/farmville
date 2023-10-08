@@ -1,5 +1,5 @@
 import { useNavigate, useParams, Link } from 'react-router-dom';
-import { Arrow, Location } from '../components/ui/icons';
+import { Arrow, Back, Location } from '../components/ui/icons';
 import { GiBarn } from 'react-icons/gi';
 import { useEffect, useState } from 'react';
 import { Bars } from '../components/loaders/Loader';
@@ -8,7 +8,7 @@ function Detail() {
    const [loading, setLoading] = useState(true);
    const params = useParams();
    const navigate = useNavigate();
-   const info = details[0];
+
    const getDetails = async () => {
       setLoading(true);
       try {
@@ -17,7 +17,7 @@ function Detail() {
          );
          const resData = await response.json();
          if (response.ok) {
-            setDetails(resData);
+            setDetails(resData[0]);
          }
       } catch (error) {
          throw new Error('an error occured while fetching the data');
@@ -30,7 +30,6 @@ function Detail() {
       return () => {};
    }, []);
 
-   console.log(info);
 
 
    return (
@@ -42,32 +41,32 @@ function Detail() {
             </div>
          ) : (
             <div className='container product-details'>
-               <Link  to={'..'} relative='path' className='back-btn'>
-                  <Arrow aria-hidden='true' />
-                  <span>back to market</span>
-               </Link>
+               <button onClick={() => navigate(-1)} className='back-btn'>
+                  <Back aria-hidden='true' />
+                  <span>back</span>
+               </button>
 
                <div className='item-detail'>
                   <div className='item-detail__image'>
                      <img
-                        src={info.imageUrl}
+                        src={details.imageUrl}
                         alt='product image'
                         className='product__image'
                      />
                   </div>
 
                   <div className='item-detail__description'>
-                     <h1 className='item__name'>{info.name}</h1>
+                     <h1 className='item__name'>{details.name}</h1>
 
                      <div className='item__price'>
                         <span className='product-name'>Available</span>
-                        <span>${info.price}</span>
+                        <span>${details.price}</span>
                      </div>
 
                      <div className='farm-details'>
                         <div className='farm-details--name'>
                            <GiBarn size='25' aria-hidden='true' />
-                           <span>{info.farmName}</span>
+                           <span>{details.farmName}</span>
                         </div>
                         <button className='farm-details--location'>
                            <Location aria-hidden='true' />
@@ -75,7 +74,7 @@ function Detail() {
                         </button>
                      </div>
 
-                     <p className='item__desc'>{info.description}</p>
+                     <p className='item__desc'>{details.description}</p>
                      <div className='actions'>
                         <button className='detail-btn'>add to basket</button>
                      </div>

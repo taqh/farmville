@@ -2,9 +2,12 @@ import { useReducer } from 'react';
 import userReducer from './UserReducer';
 import UserContext from './UserContext';
 import { user_actions } from './UserReducer';
-import { initialUserState } from './UserContext';
 
 function UserProvider({ children }) {
+   const initialUserState = {
+      user: {},
+      loginStatus: false,
+   };
    const [userState, dispatch] = useReducer(userReducer, initialUserState);
 
    const signup = (data) => {
@@ -21,10 +24,10 @@ function UserProvider({ children }) {
       dispatch({ type: user_actions.LOGOUT, payload: data });
       console.log(data);
    };
-   const status = userState.loginStatus;
-
+   
+   console.log(userState.loginStatus)
    const userValue = {
-      loginStatus: status,
+      loginStatus: userState.loginStatus,
       userData: userState,
       exitAccount: Logout,
       accessAccount: login,

@@ -13,7 +13,7 @@
    max-width: calc(var(--max-width) + var(--spacing) * 2);
 
    &__hero {
-      min-height: 40vh;
+      min-height: 60vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -26,7 +26,7 @@
       background-size: cover;
       background-attachment: fixed;
       @include u.breakpoint(screen-md) {
-         min-height: 60vh;
+         min-height: 65vh;
       }
    }
    &__btn {
@@ -73,6 +73,7 @@
          align-items: center;
          background-color: hsl(var(--clr-secondary));
          background-size: cover;
+         border-radius: 0.3125rem;
       }
    
    }

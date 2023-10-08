@@ -1,19 +1,17 @@
 import { useContext, useState, useEffect } from 'react';
 import { Spinner } from '../../components/loaders/Loader';
-import ModalContext from '../../context/ModalContext';
 import Success from '../../components/modals/Success';
 import UserContext from '../../context/UserContext';
 import Input from '../../components/ui/Input';
 import { FcGoogle } from 'react-icons/fc';
 import { BsApple } from 'react-icons/bs';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function SignUp() {
    const { createAccount, loginStatus } = useContext(UserContext);
-   const { openModal, closeModal } = useContext(ModalContext);
-
    const [loading, setLoading] = useState(false);
    const [success, setSuccess] = useState(false);
+   const navigate = useNavigate();
 
    const [firstNameIsValid, setFirstNameIsValid] = useState(true);
    const [lastNameIsValid, setLastNameIsValid] = useState(true);
@@ -50,8 +48,8 @@ function SignUp() {
          if (response.ok) {
             console.log(data);
             setSuccess(true);
-            openModal();
             createAccount(userInput);
+            navigate('/login'); // Redirect to login page
          }
       } catch (error) {
          console.error('Error:', error);
@@ -105,7 +103,7 @@ function SignUp() {
    const [confirmValue, setConfirmValue] = useState('');
 
    const checkMatch = (e) => {
-      const value = e.target.value
+      const value = e.target.value;
       setConfirmValue(value);
       if (value === userInput.password) {
          setPasswordMatch(true);
@@ -143,8 +141,9 @@ function SignUp() {
       }
 
       if (
-         (emailTouched && userInput.email.trim() === ''   &&
-         !userInput.email.includes('@')) 
+         emailTouched &&
+         userInput.email.trim() === '' &&
+         !userInput.email.includes('@')
       ) {
          setEmailIsValid(false);
       } else {
@@ -174,22 +173,19 @@ function SignUp() {
       e.preventDefault();
       if (formIsValid) {
          setLoading(true);
-   
+
          try {
             await signup();
             setLoading(false); // Set loading to false after signup attempt
-            
          } catch (error) {
             setLoading(false); // Set loading to false if there was an error
             console.error('Error during signup:', error);
          }
       }
    };
-   
 
    return (
       <>
-         <Success onClick={closeModal} />
          <div className='signup'>
             <div className='signup__header'>
                <h1>Sign up</h1>
