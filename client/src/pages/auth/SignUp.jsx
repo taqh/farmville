@@ -1,6 +1,5 @@
 import { useContext, useState, useEffect } from 'react';
 import { Spinner } from '../../components/loaders/Loader';
-import Success from '../../components/modals/Success';
 import UserContext from '../../context/UserContext';
 import Input from '../../components/ui/Input';
 import { FcGoogle } from 'react-icons/fc';
@@ -8,7 +7,7 @@ import { BsApple } from 'react-icons/bs';
 import { Link, useNavigate } from 'react-router-dom';
 
 function SignUp() {
-   const { createAccount, loginStatus } = useContext(UserContext);
+   const { createAccount } = useContext(UserContext);
    const [loading, setLoading] = useState(false);
    const [success, setSuccess] = useState(false);
    const navigate = useNavigate();
@@ -53,6 +52,7 @@ function SignUp() {
          }
       } catch (error) {
          console.error('Error:', error);
+         createAccount('error')
       }
    };
 
@@ -173,7 +173,6 @@ function SignUp() {
       e.preventDefault();
       if (formIsValid) {
          setLoading(true);
-
          try {
             await signup();
             setLoading(false); // Set loading to false after signup attempt
@@ -181,7 +180,7 @@ function SignUp() {
             setLoading(false); // Set loading to false if there was an error
             console.error('Error during signup:', error);
          }
-      }
+      }  
    };
 
    return (

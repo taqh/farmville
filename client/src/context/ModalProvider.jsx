@@ -1,25 +1,31 @@
 import { useRef } from 'react';
 import ModalContext from './ModalContext';
+import { useContext } from 'react';
+import UserContext from './UserContext';
 
 function ModalProvider({ children }) {
+   const { signupSuccess, signupError } = useContext(UserContext);
    const modalRef = useRef();
 
    const showModal = () => {
       modalRef.current.showModal();
    };
+   const showStatus = () => {
+      modalRef.current?.show();
+   };
    const hideModal = () => {
       modalRef.current.close();
    };
 
-   const modal_values = {
+   const values = {
+      modalRef: modalRef,
       openModal: showModal,
       closeModal: hideModal,
-      modalRef: modalRef,
+      showStatus: showStatus,
    };
+
    return (
-      <ModalContext.Provider value={modal_values}>
-         {children}
-      </ModalContext.Provider>
+      <ModalContext.Provider value={values}>{children}</ModalContext.Provider>
    );
 }
 

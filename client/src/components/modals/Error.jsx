@@ -1,22 +1,21 @@
-import Modal from "./Modal"
-import { useContext } from "react";
-import { Link } from "react-router-dom"
-import ModalContext from '../../context/ModalContext';
+import { useContext } from 'react';
+import UserContext from '../../context/UserContext';
+import Alert from './Alert';
 
 function Error() {
-   const { closeModal } = useContext(ModalContext);
-
-  return (
-   <Modal>
-      <div className='success'>
-         <h1 className='success__heading'>An error occured</h1>
-         <p className='success__text'>Check your connection, then try again</p>
-         <Link to='/login' onClick={closeModal} className='success__redirect'>
-            Go To Login
-         </Link>
-      </div>
-   </Modal>
-  )
+   const { signupError } = useContext(UserContext);
+  
+   return (
+      <Alert>
+         <div
+            className={`snackbar snackbar--error ${
+               signupError ? 'snackbar--active' : 'snackbar--inactive'
+            }`}
+         >
+            <p className='snackbar__text'>An error occured Please try again</p>
+         </div>
+      </Alert>
+   );
 }
 
-export default Error
+export default Error;
